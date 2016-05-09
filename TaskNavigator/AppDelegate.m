@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "SAPTasksViewController.h"
+
+#import "UIWindow+SAPExtensions.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,6 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UIWindow *window = [UIWindow window];
+    self.window = window;
+    
+    SAPTasksViewController *controller = [SAPTasksViewController new];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    window.rootViewController = navigationController;
+    
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 
