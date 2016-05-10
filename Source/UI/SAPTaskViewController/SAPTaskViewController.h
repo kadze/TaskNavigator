@@ -10,4 +10,10 @@
 
 @interface SAPTaskViewController : SAPViewController
 
+- (IBAction)onPointOnMap:(id)sender;
+- (IBAction)onCancel:(id)sender;
+- (IBAction)onDelete:(id)sender;
+- (IBAction)onSave:(id)sender;
+- (IBAction)onDistanceStepperChangeValue:(id)sender;
+
 @end

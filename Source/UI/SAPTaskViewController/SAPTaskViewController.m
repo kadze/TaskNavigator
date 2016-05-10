@@ -8,10 +8,39 @@
 
 #import "SAPTaskViewController.h"
 
+#import "SAPTaskView.h"
+
+#import "SAPViewControllerMacro.h"
+
+SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
+
 @interface SAPTaskViewController ()
 
 @end
 
 @implementation SAPTaskViewController
+
+#pragma mark -
+#pragma mark Interface Handling
+
+- (IBAction)onPointOnMap:(id)sender {
+    
+}
+
+- (IBAction)onCancel:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)onDelete:(id)sender {
+    
+}
+
+- (IBAction)onSave:(id)sender {
+    
+}
+
+- (IBAction)onDistanceStepperChangeValue:(id)sender {
+    
+}
 
 @end

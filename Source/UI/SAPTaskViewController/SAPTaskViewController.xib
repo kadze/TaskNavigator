@@ -75,16 +75,31 @@
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="10" maximumValue="1000" stepValue="10" id="M9i-tK-3X9">
                     <rect key="frame" x="218" y="479" width="94" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="onDistanceStepperChangeValue:" destination="-1" eventType="valueChanged" id="Lq8-k3-fAH"/>
+                    </connections>
                 </stepper>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9dL-lK-Rvs">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem systemItem="cancel" id="Fuc-VV-0oh"/>
+                        <barButtonItem systemItem="cancel" id="Fuc-VV-0oh">
+                            <connections>
+                                <action selector="onCancel:" destination="-1" id="0uY-y8-U5i"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem systemItem="flexibleSpace" id="k0y-8C-2pL"/>
-                        <barButtonItem systemItem="trash" id="xaA-sP-g68"/>
+                        <barButtonItem systemItem="trash" id="xaA-sP-g68">
+                            <connections>
+                                <action selector="onDelete:" destination="-1" id="jkT-A0-D2N"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem systemItem="flexibleSpace" id="xX6-Ww-4eI"/>
-                        <barButtonItem systemItem="save" id="9FH-FV-rMS"/>
+                        <barButtonItem systemItem="save" id="9FH-FV-rMS">
+                            <connections>
+                                <action selector="onSave:" destination="-1" id="TMD-tP-Taa"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="w1c-Mn-2iR">
@@ -92,6 +107,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                     <state key="normal" title="Point on map"/>
+                    <connections>
+                        <action selector="onPointOnMap:" destination="-1" eventType="touchUpInside" id="K7P-WI-FId"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
