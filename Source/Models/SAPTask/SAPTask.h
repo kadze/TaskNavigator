@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
+#import <MapKit/MKAnnotation.h>
 
 #import "SAPModel.h"
 
-@interface SAPTask : SAPModel
+@interface SAPTask : SAPModel <MKAnnotation>
 @property (nonatomic, assign) CLLocationDegrees   latitude;
 @property (nonatomic, assign) CLLocationDegrees   longitude;
 @property (nonatomic, assign) CLLocationDistance  notificationDistance;
