@@ -11,6 +11,7 @@
 #import "SAPTasksView.h"
 #import "SAPTaskCell.h"
 #import "SAPTaskViewController.h"
+#import "SAPTask.h"
 #import "SAPArrayModel.h"
 
 #import "SAPViewControllerMacro.h"
@@ -76,7 +77,9 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 }
 
 - (void)onAddTask {
-    
+    SAPTaskViewController *controller = [SAPTaskViewController new];
+    controller.model = [SAPTask new];
+    [self.navigationController pushViewController:controller animated:NO];
 }
 
 @end
