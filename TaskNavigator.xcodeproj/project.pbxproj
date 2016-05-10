@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550886D91CE2388A00B417F7 /* SAPTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550886D81CE2388A00B417F7 /* SAPTaskView.m */; };
 		55EFA1FA1CDFE3FC006E942A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA1F91CDFE3FC006E942A /* main.m */; };
 		55EFA1FD1CDFE3FC006E942A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA1FC1CDFE3FC006E942A /* AppDelegate.m */; };
 		55EFA2CB1CDFE51D006E942A /* CGGeometry+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA2141CDFE51D006E942A /* CGGeometry+SAPExtensions.m */; };
@@ -73,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		550886D71CE2388A00B417F7 /* SAPTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskView.h; sourceTree = "<group>"; };
+		550886D81CE2388A00B417F7 /* SAPTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskView.m; sourceTree = "<group>"; };
 		55EFA1F51CDFE3FC006E942A /* TaskNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55EFA1F91CDFE3FC006E942A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55EFA1FB1CDFE3FC006E942A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -964,6 +967,8 @@
 		55F26A3C1CE1032F006EE91F /* SAPTaskViewController */ = {
 			isa = PBXGroup;
 			children = (
+				550886D71CE2388A00B417F7 /* SAPTaskView.h */,
+				550886D81CE2388A00B417F7 /* SAPTaskView.m */,
 				55F26A4F1CE1149B006EE91F /* SAPTaskViewController.h */,
 				55F26A501CE1149B006EE91F /* SAPTaskViewController.m */,
 				55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */,
@@ -1070,6 +1075,7 @@
 				55EFA2CD1CDFE51D006E942A /* NSArray+SAPJSONArray.m in Sources */,
 				55EFA2EA1CDFE51D006E942A /* SAPArrayModel.m in Sources */,
 				55EFA2F51CDFE51D006E942A /* SAPReference.m in Sources */,
+				550886D91CE2388A00B417F7 /* SAPTaskView.m in Sources */,
 				55F26A521CE1149B006EE91F /* SAPTaskViewController.m in Sources */,
 				55EFA2FD1CDFE51D006E942A /* SAPDispatch.m in Sources */,
 				55F26A451CE104D2006EE91F /* SAPTask.m in Sources */,
