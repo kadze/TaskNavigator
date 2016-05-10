@@ -10,12 +10,24 @@
 
 @implementation SAPTaskMapView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+@synthesize model = _model;
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setModel:(SAPModel *)model {
+    if (_model != model) {
+        _model = model;
+        
+        [self fillWithModel:model];
+    }
 }
-*/
+
+#pragma mark -
+#pragma mark SAPModelView
+
+- (void)fillWithModel:(id)model {
+    [self.mapView addAnnotation:model];
+}
 
 @end
