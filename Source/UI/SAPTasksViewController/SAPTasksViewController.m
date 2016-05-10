@@ -15,9 +15,15 @@
 
 #import "SAPViewControllerMacro.h"
 
+static NSString * const kSAPNavigationBarTitle = @"Tasks";
+
 SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView);
 
 @interface SAPTasksViewController ()
+
+- (void)customizeNavigationBar;
+- (void)customizeRightBarButton;
+- (void)onAddTask;
 
 @end
 
@@ -28,6 +34,16 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 
 + (Class)cellClass {
     return [SAPTaskCell class];
+}
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    [self customizeNavigationBar];
+    
+    return self;
 }
 
 #pragma mark -
@@ -44,6 +60,23 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
     SAPTaskViewController *controller = [SAPTaskViewController new];
     controller.model = self.items[indexPath.row];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)customizeRightBarButton {
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onAddTask)];
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)customizeNavigationBar {
+    [self customizeRightBarButton];
+    self.navigationItem.title = kSAPNavigationBarTitle;
+}
+
+- (void)onAddTask {
+    
 }
 
 @end
