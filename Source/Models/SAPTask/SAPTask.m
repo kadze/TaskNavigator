@@ -12,6 +12,9 @@
 
 @dynamic coordinate;
 
+#pragma mark -
+#pragma mark Accessors
+
 - (CLLocationCoordinate2D)coordinate {
     CLLocationDegrees latitude = self.latitude;
     CLLocationDegrees longitude = self.longitude;
@@ -20,6 +23,11 @@
     }
     
     return kCLLocationCoordinate2DInvalid;
+}
+
+- (void)setCoordinate:(CLLocationCoordinate2D)coordinate {
+    self.latitude = coordinate.latitude;
+    self.longitude = coordinate.longitude;
 }
 
 @end

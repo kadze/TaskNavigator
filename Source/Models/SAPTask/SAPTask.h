@@ -17,6 +17,8 @@
 @property (nonatomic, assign) CLLocationDegrees   longitude;
 @property (nonatomic, assign) CLLocationDistance  notificationDistance;
 
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSString *address;
