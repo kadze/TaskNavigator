@@ -77,9 +77,11 @@
 		55F26A4E1CE10DBE006EE91F /* SAPTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F26A4D1CE10DBE006EE91F /* SAPTaskCell.xib */; };
 		55F26A521CE1149B006EE91F /* SAPTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F26A501CE1149B006EE91F /* SAPTaskViewController.m */; };
 		55F26A531CE1149B006EE91F /* SAPTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */; };
+		FF442FB415B8C469BA98E2F7 /* libPods-TaskNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F696ABF6C8DECEF87A9DAEF /* Pods-TaskNavigator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskNavigator.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator.release.xcconfig"; sourceTree = "<group>"; };
 		550886D71CE2388A00B417F7 /* SAPTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskView.h; sourceTree = "<group>"; };
 		550886D81CE2388A00B417F7 /* SAPTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskView.m; sourceTree = "<group>"; };
 		550886DA1CE245F100B417F7 /* SAPTaskMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskMapViewController.h; sourceTree = "<group>"; };
@@ -229,6 +231,8 @@
 		55F26A4F1CE1149B006EE91F /* SAPTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskViewController.h; sourceTree = "<group>"; };
 		55F26A501CE1149B006EE91F /* SAPTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskViewController.m; sourceTree = "<group>"; };
 		55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPTaskViewController.xib; sourceTree = "<group>"; };
+		8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskNavigator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3E6CF9270AA95C296D81777 /* Pods-TaskNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskNavigator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,12 +240,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF442FB415B8C469BA98E2F7 /* libPods-TaskNavigator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1B5477A53A0D8FD349240F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3E6CF9270AA95C296D81777 /* Pods-TaskNavigator.debug.xcconfig */,
+				2F696ABF6C8DECEF87A9DAEF /* Pods-TaskNavigator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		55EFA1EC1CDFE3FC006E942A = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +263,8 @@
 				55EFA2FF1CDFE548006E942A /* Resources */,
 				55EFA20F1CDFE51D006E942A /* Source */,
 				55EFA1F61CDFE3FC006E942A /* Products */,
+				1F1B5477A53A0D8FD349240F /* Pods */,
+				5D3CA18090EA39B6C57A7DC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1021,6 +1037,14 @@
 			path = SAPTaskCell;
 			sourceTree = "<group>";
 		};
+		5D3CA18090EA39B6C57A7DC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1028,9 +1052,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55EFA20C1CDFE3FC006E942A /* Build configuration list for PBXNativeTarget "TaskNavigator" */;
 			buildPhases = (
+				55DAE6DEEB11A49C1F289784 /* 📦 Check Pods Manifest.lock */,
 				55EFA1F11CDFE3FC006E942A /* Sources */,
 				55EFA1F21CDFE3FC006E942A /* Frameworks */,
 				55EFA1F31CDFE3FC006E942A /* Resources */,
+				892525F9A39921F904E41823 /* 📦 Embed Pods Frameworks */,
+				BD22D10FA6FB9E87AC5D1BFB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1090,6 +1117,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55DAE6DEEB11A49C1F289784 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		892525F9A39921F904E41823 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD22D10FA6FB9E87AC5D1BFB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55EFA1F11CDFE3FC006E942A /* Sources */ = {
@@ -1249,6 +1324,7 @@
 		};
 		55EFA20D1CDFE3FC006E942A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3E6CF9270AA95C296D81777 /* Pods-TaskNavigator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TaskNavigator/Info.plist;
@@ -1260,6 +1336,7 @@
 		};
 		55EFA20E1CDFE3FC006E942A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F696ABF6C8DECEF87A9DAEF /* Pods-TaskNavigator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TaskNavigator/Info.plist;
