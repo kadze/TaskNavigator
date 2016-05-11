@@ -18,6 +18,10 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="aBD-0X-ja3">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="TT4-lr-PuT" appends="YES" id="tJL-T1-V2y"/>
+                    </connections>
                 </mapView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ftY-C8-Nu6">
                     <rect key="frame" x="101" y="475" width="118" height="40"/>
@@ -33,5 +37,10 @@
             </connections>
             <point key="canvasLocation" x="287" y="307"/>
         </view>
+        <tapGestureRecognizer id="TT4-lr-PuT">
+            <connections>
+                <action selector="onTap:" destination="-1" id="o5Q-vY-wb6"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

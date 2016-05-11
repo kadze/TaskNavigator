@@ -17,6 +17,8 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
 
 @interface SAPTaskMapViewController ()
 
+- (MKMapView *)mapView;
+
 @end
 
 @implementation SAPTaskMapViewController
@@ -34,18 +36,31 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
 }
 
 #pragma mark -
+#pragma mark Interface Handling
+
+- (IBAction)onTap:(UITapGestureRecognizer *)recognizer {
+    MKMapView *mapView = self.mapView;
+    CGPoint recognizerLocation = [recognizer locationInView:mapView];
+    CLLocationCoordinate2D coordinate = [mapView convertPoint:recognizerLocation
+                                         toCoordinateFromView:mapView];
+    
+    SAPTask *annotation = self.model;
+    annotation.coordinate = coordinate;
+    self.mainView.model = annotation;
+}
+
+#pragma mark -
 #pragma mark Public
 
 - (void)finishModelSetting {
-    SAPTask *model = self.model;
-    if (!model) {
-        return;
-    }
-    
-    CLLocationCoordinate2D coordinate = model.coordinate;
-    if (CLLocationCoordinate2DIsValid(coordinate)) {
-        self.mainView.model = model;
-    }
+    self.mainView.model = self.model;
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (MKMapView *)mapView {
+    return self.mainView.mapView;
 }
 
 @end

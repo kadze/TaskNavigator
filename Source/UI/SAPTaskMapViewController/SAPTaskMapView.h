@@ -13,6 +13,6 @@
 
 @interface SAPTaskMapView : SAPView <SAPModelView>
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-@property (nonatomic, strong) IBOutlet UIButton  *OKButton;
+@property (nonatomic, strong) IBOutlet UIButton  *OKButton;           
 
 @end

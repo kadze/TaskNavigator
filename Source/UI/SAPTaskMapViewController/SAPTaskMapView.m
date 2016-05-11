@@ -8,6 +8,8 @@
 
 #import "SAPTaskMapView.h"
 
+#import "SAPTask.h"
+
 @implementation SAPTaskMapView
 
 @synthesize model = _model;
@@ -15,19 +17,27 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setModel:(SAPModel *)model {
+- (void)setModel:(id<MKAnnotation>)model {
     if (_model != model) {
-        _model = model;
+        MKMapView *mapView = self.mapView;
         
-        [self fillWithModel:model];
+        [mapView removeAnnotation:_model];
+        _model = model;
+        [mapView addAnnotation:model];
     }
+    
+    [self fillWithModel:model];
 }
 
 #pragma mark -
 #pragma mark SAPModelView
 
-- (void)fillWithModel:(id)model {
-    [self.mapView addAnnotation:model];
+- (void)fillWithModel:(id<MKAnnotation>)model {
+    CLLocationCoordinate2D coordinate = model.coordinate;
+    if (CLLocationCoordinate2DIsValid(coordinate)) {
+        id<MKAnnotation> annotation = self.model;
+        annotation.coordinate = model.coordinate;
+    }
 }
 
 @end
