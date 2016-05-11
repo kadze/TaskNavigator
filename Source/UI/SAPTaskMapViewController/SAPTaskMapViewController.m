@@ -13,6 +13,8 @@
 
 #import "SAPViewControllerMacro.h"
 
+#import "SAPDispatch.h"
+
 SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, mainView);
 
 @interface SAPTaskMapViewController ()
@@ -46,7 +48,12 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
     
     SAPTask *annotation = self.model;
     annotation.coordinate = coordinate;
-    self.mainView.model = annotation;
+    
+    SAPDispatchAsyncOnDefaultQueue(^{
+        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+    });
+    
+    [self finishModelSetting];
 }
 
 #pragma mark -

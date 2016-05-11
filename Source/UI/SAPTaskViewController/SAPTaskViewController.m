@@ -51,6 +51,13 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 }
 
 #pragma mark -
+#pragma mark Public
+
+- (void)updateViewControllerWithModel:(id)model {
+    self.mainView.model = model;
+}
+
+#pragma mark -
 #pragma mark Private
 
 - (void)fillModelFromMainView {

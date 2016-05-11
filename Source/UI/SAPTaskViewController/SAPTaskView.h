@@ -10,8 +10,9 @@
 
 #import "SAPView.h"
 
+#import "SAPModelView.h"
 
-@interface SAPTaskView : SAPView
+@interface SAPTaskView : SAPView <SAPModelView>
 @property (nonatomic, strong) IBOutlet UITextField  *titleTextField;
 @property (nonatomic, strong) IBOutlet UILabel      *notesLabel;
 @property (nonatomic, strong) IBOutlet UITextView   *notesTextView;
@@ -22,9 +23,5 @@
 @property (nonatomic, strong) IBOutlet UILabel      *distanceLabel;
 @property (nonatomic, strong) IBOutlet UITextField  *distanceTextField;
 @property (nonatomic, strong) IBOutlet UIStepper    *distanceStepper;
-
-//@property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelBarButton;
-//@property (nonatomic, strong) IBOutlet UIBarButtonItem *deleteBarButton;
-//@property (nonatomic, strong) IBOutlet UIBarButtonItem *saveBarButton;
 
 @end
