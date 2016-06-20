@@ -67,6 +67,7 @@
     [UINavigationBar appearance].barTintColor = [SAPColor navigationBarColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"BackArrow"];
 }
 
 @end
