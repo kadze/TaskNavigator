@@ -16,7 +16,8 @@
 
 #import "SAPViewControllerMacro.h"
 
-static NSString * const kSAPNavigationBarTitle = @"Tasks";
+static NSString * const kSAPNavigationBarTitle = @"Task List";
+static NSString * const kSAPAddButtonImageName = @"AddButton";
 
 SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView);
 
@@ -67,7 +68,10 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 #pragma mark Private
 
 - (void)customizeRightBarButton {
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onAddTask)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:kSAPAddButtonImageName]
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(onAddTask)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 

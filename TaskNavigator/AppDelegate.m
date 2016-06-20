@@ -5,14 +5,18 @@
 //  Created by Andrey on 5/9/16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
+#import <UIKit/UIAppearance.h>
 
 #import "AppDelegate.h"
 
 #import "SAPTasksViewController.h"
+#import "SAPColor.h"
 
 #import "UIWindow+SAPExtensions.h"
 
 @interface AppDelegate ()
+
+- (void)customizeAppearance;
 
 @end
 
@@ -26,6 +30,8 @@
     SAPTasksViewController *controller = [SAPTasksViewController new];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    [self customizeAppearance];
     
     window.rootViewController = navigationController;
     
@@ -52,6 +58,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (void)customizeAppearance {
+    [UINavigationBar appearance].barTintColor = [SAPColor navigationBarColor];
+    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
 }
 
 @end

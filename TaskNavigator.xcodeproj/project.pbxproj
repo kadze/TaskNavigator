@@ -14,6 +14,8 @@
 		550886E31CE2465A00B417F7 /* SAPTasksMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550886E11CE2465A00B417F7 /* SAPTasksMapViewController.xib */; };
 		550886E61CE2469600B417F7 /* SAPTaskMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550886E51CE2469600B417F7 /* SAPTaskMapView.m */; };
 		550886E91CE246CE00B417F7 /* SAPTasksMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550886E81CE246CE00B417F7 /* SAPTasksMapView.m */; };
+		55C7F0F81D187FAE00BBA707 /* UIColor+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C7F0F71D187FAE00BBA707 /* UIColor+SAPExtensions.m */; };
+		55C7F1001D18853100BBA707 /* SAPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C7F0FF1D18853100BBA707 /* SAPColor.m */; };
 		55EFA1FA1CDFE3FC006E942A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA1F91CDFE3FC006E942A /* main.m */; };
 		55EFA1FD1CDFE3FC006E942A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA1FC1CDFE3FC006E942A /* AppDelegate.m */; };
 		55EFA2CB1CDFE51D006E942A /* CGGeometry+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA2141CDFE51D006E942A /* CGGeometry+SAPExtensions.m */; };
@@ -94,6 +96,10 @@
 		550886E51CE2469600B417F7 /* SAPTaskMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskMapView.m; sourceTree = "<group>"; };
 		550886E71CE246CE00B417F7 /* SAPTasksMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTasksMapView.h; sourceTree = "<group>"; };
 		550886E81CE246CE00B417F7 /* SAPTasksMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTasksMapView.m; sourceTree = "<group>"; };
+		55C7F0F61D187FAE00BBA707 /* UIColor+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAPExtensions.h"; sourceTree = "<group>"; };
+		55C7F0F71D187FAE00BBA707 /* UIColor+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAPExtensions.m"; sourceTree = "<group>"; };
+		55C7F0FE1D18853100BBA707 /* SAPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPColor.h; sourceTree = "<group>"; };
+		55C7F0FF1D18853100BBA707 /* SAPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPColor.m; sourceTree = "<group>"; };
 		55EFA1F51CDFE3FC006E942A /* TaskNavigator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskNavigator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55EFA1F91CDFE3FC006E942A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55EFA1FB1CDFE3FC006E942A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -256,6 +262,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		55C7F0F51D187F6800BBA707 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				55C7F0F61D187FAE00BBA707 /* UIColor+SAPExtensions.h */,
+				55C7F0F71D187FAE00BBA707 /* UIColor+SAPExtensions.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		55C7F0FC1D1884FB00BBA707 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				55C7F0FD1D18851800BBA707 /* SAPColor */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		55C7F0FD1D18851800BBA707 /* SAPColor */ = {
+			isa = PBXGroup;
+			children = (
+				55C7F0FE1D18853100BBA707 /* SAPColor.h */,
+				55C7F0FF1D18853100BBA707 /* SAPColor.m */,
+			);
+			path = SAPColor;
+			sourceTree = "<group>";
+		};
 		55EFA1EC1CDFE3FC006E942A = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +337,7 @@
 				55EFA2B71CDFE51D006E942A /* Functions */,
 				55EFA2BE1CDFE51D006E942A /* Macro */,
 				55EFA2C51CDFE51D006E942A /* Protocols */,
-				55EFA2C71CDFE51D006E942A /* Utilities */,
+				55C7F0FC1D1884FB00BBA707 /* Utilities */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -313,6 +345,7 @@
 		55EFA2111CDFE51D006E942A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				55C7F0F51D187F6800BBA707 /* UIColor */,
 				55EFA2121CDFE51D006E942A /* CGGeometry */,
 				55EFA2151CDFE51D006E942A /* Core Data */,
 				55EFA21B1CDFE51D006E942A /* JSONRepresentation */,
@@ -935,13 +968,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		55EFA2C71CDFE51D006E942A /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		55EFA2C91CDFE51D006E942A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1185,6 +1211,7 @@
 				55F26A451CE104D2006EE91F /* SAPTask.m in Sources */,
 				55EFA2F21CDFE51D006E942A /* SAPObjectCache.m in Sources */,
 				55EFA2DA1CDFE51D006E942A /* NSString+IOPRandomName.m in Sources */,
+				55C7F0F81D187FAE00BBA707 /* UIColor+SAPExtensions.m in Sources */,
 				55EFA2DD1CDFE51D006E942A /* UIAlertView+SAPExtensions.m in Sources */,
 				55EFA1FD1CDFE3FC006E942A /* AppDelegate.m in Sources */,
 				55F26A481CE1066A006EE91F /* SAPTasksView.m in Sources */,
@@ -1233,6 +1260,7 @@
 				55EFA2D61CDFE51D006E942A /* NSNumber+SAPExtentions.m in Sources */,
 				550886DD1CE245F100B417F7 /* SAPTaskMapViewController.m in Sources */,
 				55F26A401CE103ED006EE91F /* SAPTasksViewController.m in Sources */,
+				55C7F1001D18853100BBA707 /* SAPColor.m in Sources */,
 				55EFA2F61CDFE51D006E942A /* SAPArrayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
