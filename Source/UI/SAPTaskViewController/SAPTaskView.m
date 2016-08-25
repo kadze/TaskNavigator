@@ -20,6 +20,14 @@
 
 @synthesize model = _model;
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    [self.slider setMaximumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
+    [self.slider setMinimumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark Accessors
 
@@ -32,12 +40,32 @@
 }
 
 #pragma mark -
+#pragma mark View Lifecycle
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGColorRef grayColor = [UIColor lightGrayColor].CGColor;
+    for (UIControl *control in @[self.titleTextField,
+                                 self.notesTextView,
+                                 self.latitudeTextField,
+                                 self.longtitudeTextField,
+                                 self.addressTextField])
+    {
+        CALayer *layer = control.layer;
+        layer.borderColor = grayColor;
+        layer.borderWidth = 1;
+    }
+    
+    UIButton *chooseButton = self.chooseOnMapButton;
+    chooseButton.layer.cornerRadius = chooseButton.bounds.size.height / 2;
+}
+
+#pragma mark -
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(SAPTask *)task {
     self.latitudeTextField.text = [self stringFromDouble:task.latitude];
     self.longtitudeTextField.text = [self stringFromDouble:task.longitude];
-    self.distanceTextField.text = [self stringFromDouble:task.notificationDistance];
     self.titleTextField.text = task.title;
     self.notesTextView.text = task.notes;
     self.addressTextField.text = task.address;

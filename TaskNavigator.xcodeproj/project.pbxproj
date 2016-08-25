@@ -14,6 +14,17 @@
 		550886E31CE2465A00B417F7 /* SAPTasksMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 550886E11CE2465A00B417F7 /* SAPTasksMapViewController.xib */; };
 		550886E61CE2469600B417F7 /* SAPTaskMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550886E51CE2469600B417F7 /* SAPTaskMapView.m */; };
 		550886E91CE246CE00B417F7 /* SAPTasksMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550886E81CE246CE00B417F7 /* SAPTasksMapView.m */; };
+		553BD4C41D1A871C0080A9F1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4B91D1A871C0080A9F1 /* LICENSE.txt */; };
+		553BD4C51D1A871C0080A9F1 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BA1D1A871C0080A9F1 /* OpenSans-Bold.ttf */; };
+		553BD4C61D1A871C0080A9F1 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BB1D1A871C0080A9F1 /* OpenSans-BoldItalic.ttf */; };
+		553BD4C71D1A871C0080A9F1 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BC1D1A871C0080A9F1 /* OpenSans-ExtraBold.ttf */; };
+		553BD4C81D1A871C0080A9F1 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BD1D1A871C0080A9F1 /* OpenSans-ExtraBoldItalic.ttf */; };
+		553BD4C91D1A871C0080A9F1 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BE1D1A871C0080A9F1 /* OpenSans-Italic.ttf */; };
+		553BD4CA1D1A871C0080A9F1 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4BF1D1A871C0080A9F1 /* OpenSans-Light.ttf */; };
+		553BD4CB1D1A871C0080A9F1 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4C01D1A871C0080A9F1 /* OpenSans-LightItalic.ttf */; };
+		553BD4CC1D1A871C0080A9F1 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4C11D1A871C0080A9F1 /* OpenSans-Regular.ttf */; };
+		553BD4CD1D1A871C0080A9F1 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4C21D1A871C0080A9F1 /* OpenSans-Semibold.ttf */; };
+		553BD4CE1D1A871C0080A9F1 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 553BD4C31D1A871C0080A9F1 /* OpenSans-SemiboldItalic.ttf */; };
 		55C7F0F81D187FAE00BBA707 /* UIColor+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C7F0F71D187FAE00BBA707 /* UIColor+SAPExtensions.m */; };
 		55C7F1001D18853100BBA707 /* SAPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C7F0FF1D18853100BBA707 /* SAPColor.m */; };
 		55EFA1FA1CDFE3FC006E942A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EFA1F91CDFE3FC006E942A /* main.m */; };
@@ -96,6 +107,17 @@
 		550886E51CE2469600B417F7 /* SAPTaskMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskMapView.m; sourceTree = "<group>"; };
 		550886E71CE246CE00B417F7 /* SAPTasksMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTasksMapView.h; sourceTree = "<group>"; };
 		550886E81CE246CE00B417F7 /* SAPTasksMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTasksMapView.m; sourceTree = "<group>"; };
+		553BD4B91D1A871C0080A9F1 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		553BD4BA1D1A871C0080A9F1 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		553BD4BB1D1A871C0080A9F1 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		553BD4BC1D1A871C0080A9F1 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		553BD4BD1D1A871C0080A9F1 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		553BD4BE1D1A871C0080A9F1 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		553BD4BF1D1A871C0080A9F1 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		553BD4C01D1A871C0080A9F1 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		553BD4C11D1A871C0080A9F1 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		553BD4C21D1A871C0080A9F1 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		553BD4C31D1A871C0080A9F1 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		55C7F0F61D187FAE00BBA707 /* UIColor+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAPExtensions.h"; sourceTree = "<group>"; };
 		55C7F0F71D187FAE00BBA707 /* UIColor+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAPExtensions.m"; sourceTree = "<group>"; };
 		55C7F0FE1D18853100BBA707 /* SAPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPColor.h; sourceTree = "<group>"; };
@@ -260,6 +282,32 @@
 				2F696ABF6C8DECEF87A9DAEF /* Pods-TaskNavigator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		553BD4B71D1A86FA0080A9F1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				553BD4B81D1A871C0080A9F1 /* open_sans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		553BD4B81D1A871C0080A9F1 /* open_sans */ = {
+			isa = PBXGroup;
+			children = (
+				553BD4B91D1A871C0080A9F1 /* LICENSE.txt */,
+				553BD4BA1D1A871C0080A9F1 /* OpenSans-Bold.ttf */,
+				553BD4BB1D1A871C0080A9F1 /* OpenSans-BoldItalic.ttf */,
+				553BD4BC1D1A871C0080A9F1 /* OpenSans-ExtraBold.ttf */,
+				553BD4BD1D1A871C0080A9F1 /* OpenSans-ExtraBoldItalic.ttf */,
+				553BD4BE1D1A871C0080A9F1 /* OpenSans-Italic.ttf */,
+				553BD4BF1D1A871C0080A9F1 /* OpenSans-Light.ttf */,
+				553BD4C01D1A871C0080A9F1 /* OpenSans-LightItalic.ttf */,
+				553BD4C11D1A871C0080A9F1 /* OpenSans-Regular.ttf */,
+				553BD4C21D1A871C0080A9F1 /* OpenSans-Semibold.ttf */,
+				553BD4C31D1A871C0080A9F1 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = open_sans;
 			sourceTree = "<group>";
 		};
 		55C7F0F51D187F6800BBA707 /* UIColor */ = {
@@ -979,6 +1027,7 @@
 		55EFA2FF1CDFE548006E942A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				553BD4B71D1A86FA0080A9F1 /* Fonts */,
 				55EFA3001CDFE571006E942A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -1133,12 +1182,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				55EFA3011CDFE571006E942A /* Assets.xcassets in Resources */,
+				553BD4C71D1A871C0080A9F1 /* OpenSans-ExtraBold.ttf in Resources */,
+				553BD4CA1D1A871C0080A9F1 /* OpenSans-Light.ttf in Resources */,
 				550886E31CE2465A00B417F7 /* SAPTasksMapViewController.xib in Resources */,
 				550886DE1CE245F100B417F7 /* SAPTaskMapViewController.xib in Resources */,
+				553BD4C91D1A871C0080A9F1 /* OpenSans-Italic.ttf in Resources */,
+				553BD4CC1D1A871C0080A9F1 /* OpenSans-Regular.ttf in Resources */,
 				55F26A411CE103ED006EE91F /* SAPTasksViewController.xib in Resources */,
+				553BD4C61D1A871C0080A9F1 /* OpenSans-BoldItalic.ttf in Resources */,
+				553BD4C41D1A871C0080A9F1 /* LICENSE.txt in Resources */,
+				553BD4CE1D1A871C0080A9F1 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				553BD4C81D1A871C0080A9F1 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				553BD4C51D1A871C0080A9F1 /* OpenSans-Bold.ttf in Resources */,
 				55EFA2F91CDFE51D006E942A /* SAPActivityIndicator.xib in Resources */,
 				55F26A4E1CE10DBE006EE91F /* SAPTaskCell.xib in Resources */,
 				55F26A531CE1149B006EE91F /* SAPTaskViewController.xib in Resources */,
+				553BD4CB1D1A871C0080A9F1 /* OpenSans-LightItalic.ttf in Resources */,
+				553BD4CD1D1A871C0080A9F1 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

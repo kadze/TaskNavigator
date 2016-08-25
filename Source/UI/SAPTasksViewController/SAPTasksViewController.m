@@ -49,6 +49,18 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 }
 
 #pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    CGFloat topOffset = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+    
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeTop multiplier:1 constant:topOffset];
+    
+    [NSLayoutConstraint activateConstraints:@[top]];
+}
+
+#pragma mark -
 #pragma mark Accessors
 
 - (UITableView *)tableView {

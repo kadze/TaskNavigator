@@ -68,6 +68,7 @@
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"BackArrow"];
+    [UINavigationBar appearance].titleTextAttributes = @{NSFontAttributeName:[UIFont fontWithName:@"OpenSans" size:16]};
 }
 
 @end
