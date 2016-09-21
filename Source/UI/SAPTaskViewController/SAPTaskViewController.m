@@ -52,44 +52,38 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 #pragma mark -
 #pragma mark View Lifecycle
 
-//- (void)updateViewConstraints {
-////    CGFloat topOffset = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height + kSAPDefaultConstrainConstant;
-////    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.mainView.titleLabel
-////                                                           attribute:NSLayoutAttributeTop
-////                                                           relatedBy:NSLayoutRelationEqual
-////                                                              toItem:self.topLayoutGuide
-////                                                           attribute:NSLayoutAttributeTop
-////                                                          multiplier:1
-////                                                            constant:topOffset];
-////    
-////    self.topConstraint = top;
-//    [super updateViewConstraints];
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
+
 #pragma mark -
 #pragma mark Interface Handling
 
-- (IBAction)onPointOnMap:(id)sender {
+- (IBAction)onPointOnMap:(UIButton *)sender {
     SAPTaskMapViewController *controller = [SAPTaskMapViewController new];
     [self fillModelFromMainView];
     controller.model = self.model;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (IBAction)onCancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)onDelete:(id)sender {
-    
-}
-
-- (IBAction)onSave:(id)sender {
-    
+- (IBAction)onSegmentedControlValueChanged:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+            case 0:
+                [self cancel];
+            
+            break;
+            
+            case 1:
+                [self delete];
+            
+            break;
+            
+            case 2:
+                [self save];
+            
+            break;
+    }
 }
 
 - (IBAction)onDistanceStepperChangeValue:(id)sender {
@@ -121,5 +115,16 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
     self.navigationItem.title = kSAPNavigationBarTitle;
 }
 
+- (void)cancel {
+    
+}
+
+- (void)delete {
+    
+}
+
+- (void)save {
+    
+}
 
 @end

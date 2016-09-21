@@ -13,15 +13,13 @@
 #import "SAPModelView.h"
 
 @interface SAPTaskView : SAPView <SAPModelView>
-@property (nonatomic, strong) IBOutlet UILabel      *titleLabel;
-@property (nonatomic, strong) IBOutlet UITextField  *titleTextField;
-@property (nonatomic, strong) IBOutlet UILabel      *notesLabel;
-@property (nonatomic, strong) IBOutlet UITextView   *notesTextView;
-@property (nonatomic, strong) IBOutlet UITextField  *addressTextField;
-@property (nonatomic, strong) IBOutlet UITextField  *latitudeTextField;
-@property (nonatomic, strong) IBOutlet UITextField  *longtitudeTextField;
-@property (nonatomic, strong) IBOutlet UIButton     *chooseOnMapButton;
-//@property (nonatomic, strong) IBOutlet UILabel      *distanceLabel;
-@property (nonatomic, strong) IBOutlet UISlider     *slider;
+@property (nonatomic, strong) IBOutlet UITextField          *titleTextField;
+@property (nonatomic, strong) IBOutlet UITextView           *notesTextView;
+@property (nonatomic, strong) IBOutlet UITextField          *addressTextField;
+@property (nonatomic, strong) IBOutlet UITextField          *latitudeTextField;
+@property (nonatomic, strong) IBOutlet UITextField          *longtitudeTextField;
+@property (nonatomic, strong) IBOutlet UIButton             *chooseOnMapButton;
+@property (nonatomic, strong) IBOutlet UISlider             *slider;
+@property (nonatomic, strong) IBOutlet UISegmentedControl   *segmentedControl;
 
 @end
