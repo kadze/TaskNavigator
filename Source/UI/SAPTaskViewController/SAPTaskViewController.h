@@ -10,8 +10,8 @@
 
 @interface SAPTaskViewController : SAPViewController
 
-- (IBAction)onPointOnMap:(UIButton *)sender;
-- (IBAction)onSegmentedControlValueChanged:(UISegmentedControl *)sender;
+- (IBAction)onPointOnMap:(id)sender;
+- (IBAction)onSegmentedControlValueChanged:(id)sender;
 - (IBAction)onDistanceStepperChangeValue:(id)sender;
 
 @end
