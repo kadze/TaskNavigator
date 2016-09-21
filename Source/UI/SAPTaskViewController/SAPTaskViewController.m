@@ -52,20 +52,24 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 #pragma mark -
 #pragma mark View Lifecycle
 
-- (void)updateViewConstraints {
-    CGFloat topOffset = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height + kSAPDefaultConstrainConstant;
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.mainView.titleLabel
-                                                           attribute:NSLayoutAttributeTop
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:self.topLayoutGuide
-                                                           attribute:NSLayoutAttributeTop
-                                                          multiplier:1
-                                                            constant:topOffset];
-    
-    self.topConstraint = top;
-    [super updateViewConstraints];
-}
+//- (void)updateViewConstraints {
+////    CGFloat topOffset = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height + kSAPDefaultConstrainConstant;
+////    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.mainView.titleLabel
+////                                                           attribute:NSLayoutAttributeTop
+////                                                           relatedBy:NSLayoutRelationEqual
+////                                                              toItem:self.topLayoutGuide
+////                                                           attribute:NSLayoutAttributeTop
+////                                                          multiplier:1
+////                                                            constant:topOffset];
+////    
+////    self.topConstraint = top;
+//    [super updateViewConstraints];
+//}
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
 #pragma mark -
 #pragma mark Interface Handling
 
