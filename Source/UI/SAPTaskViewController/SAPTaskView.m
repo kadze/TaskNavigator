@@ -58,6 +58,9 @@
     
     UIButton *chooseButton = self.chooseOnMapButton;
     chooseButton.layer.cornerRadius = chooseButton.bounds.size.height / 2;
+    
+    self.notesTextView.placeholder = @"Notes";
+    self.titleTextField.floatLabelActiveColor = [UIColor colorWithRed:55/255.0 green:74/255.0 blue:151/255.0 alpha:1.0];
 }
 
 #pragma mark -
@@ -77,5 +80,6 @@
 - (NSString *)stringFromDouble:(double)value {
     return [NSString stringWithFormat:@"%f", value];
 }
+
 
 @end

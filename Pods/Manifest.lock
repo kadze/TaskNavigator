@@ -2,13 +2,19 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - UIFloatLabelTextField (1.2.5)
+  - UIFloatLabelTextView (1.0.9)
 
 DEPENDENCIES:
   - MagicalRecord
+  - UIFloatLabelTextField
+  - UIFloatLabelTextView
 
 SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  UIFloatLabelTextField: b01b1bcea4b4fd617e80744f3cfd06e1d1b7e75e
+  UIFloatLabelTextView: 44061fe88933a055e139c58a7c0ae8ca5a26d610
 
-PODFILE CHECKSUM: 12cef8525756952ea0ed12b28bfd9b4298c09668
+PODFILE CHECKSUM: f91cc7fb6f0ab83fcd24c57b29313ae528d70ff5
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
