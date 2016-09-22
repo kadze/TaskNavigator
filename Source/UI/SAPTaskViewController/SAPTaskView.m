@@ -88,5 +88,4 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
     return [NSString stringWithFormat:@"%f", value];
 }
 
-
 @end
