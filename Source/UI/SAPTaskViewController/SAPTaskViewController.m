@@ -62,7 +62,6 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 - (IBAction)onPointOnMap:(UIButton *)sender {
     SAPTaskMapViewController *controller = [SAPTaskMapViewController new];
     [self fillModelFromMainView];
-#warning dont understand why fill from view
     controller.model = self.model;
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -86,10 +85,6 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
     }
 }
 
-- (IBAction)onDistanceStepperChangeValue:(id)sender {
-    
-}
-
 #pragma mark -
 #pragma mark Public
 
@@ -101,14 +96,7 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 #pragma mark Private
 
 - (void)fillModelFromMainView {
-    SAPTask *task = self.model;
-    SAPTaskView *view = self.mainView;
-    task.title = view.titleTextField.text;
-    task.notes = view.notesTextView.text;
-    task.address = view.addressTextField.text;
-    task.longitude = view.longtitudeTextField.text.doubleValue;
-    task.latitude = view.latitudeTextField.text.doubleValue;
-//    task.notificationDistance = view.distanceTextField.text.doubleValue;    
+    [self.mainView fillModel:self.model];
 }
 
 - (void)customizeNavigationBar {

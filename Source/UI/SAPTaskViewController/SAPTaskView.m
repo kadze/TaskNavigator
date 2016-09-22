@@ -63,6 +63,17 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 }
 
 #pragma mark -
+#pragma mark Public
+
+- (void)fillModel:(SAPTask *)model {
+    model.title = self.titleTextField.text;
+    model.notes = self.notesTextView.text;
+    model.address = self.addressTextField.text;
+    model.longitude = self.longtitudeTextField.text.doubleValue;
+    model.latitude = self.latitudeTextField.text.doubleValue;
+}
+
+#pragma mark -
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(SAPTask *)task {
