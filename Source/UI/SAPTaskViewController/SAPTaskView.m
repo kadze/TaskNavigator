@@ -19,6 +19,7 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 @interface SAPTaskView ()
 
 - (NSString *)stringFromDouble:(double)value;
+- (void)customizeControls;
 
 @end
 
@@ -42,24 +43,7 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGColorRef grayColor = [UIColor lightGrayColor].CGColor;
-    for (UIFloatLabelTextField *control in @[self.titleTextField,
-                                 self.notesTextView,
-                                 self.latitudeTextField,
-                                 self.longtitudeTextField,
-                                 self.addressTextField])
-    {
-        CALayer *layer = control.layer;
-        layer.borderColor = grayColor;
-        layer.borderWidth = kSAPDefaultBorderWidth;
-        
-        control.floatLabelActiveColor = [UIColor blueThemeColor];
-    }
-    
-    UIButton *chooseButton = self.chooseOnMapButton;
-    chooseButton.layer.cornerRadius = chooseButton.bounds.size.height / 2;
-    
-    self.notesTextView.placeholder = kSAPNotesPlaceholder;
+    [self customizeControls];
 }
 
 #pragma mark -
@@ -95,6 +79,32 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 
 - (NSString *)stringFromDouble:(double)value {
     return [NSString stringWithFormat:@"%f", value];
+}
+
+- (void)customizeControls {
+    CGColorRef grayColor = [UIColor lightGrayColor].CGColor;
+    for (UIFloatLabelTextField *control in @[self.titleTextField,
+                                                 self.notesTextView,
+                                                 self.latitudeTextField,
+                                                 self.longtitudeTextField,
+                                                 self.addressTextField])
+    {
+        CALayer *layer = control.layer;
+        layer.borderColor = grayColor;
+        layer.borderWidth = kSAPDefaultBorderWidth;
+        
+        control.floatLabelActiveColor = [UIColor blueThemeColor];
+    }
+    
+    UIButton *chooseButton = self.chooseOnMapButton;
+    chooseButton.layer.cornerRadius = chooseButton.bounds.size.height / 2;
+    
+    self.notesTextView.placeholder = kSAPNotesPlaceholder;
+    
+    ASValueTrackingSlider *slider = self.slider;
+    [slider showPopUpViewAnimated:YES];
+    [slider setMaxFractionDigitsDisplayed:0];
+    slider.popUpViewColor = [UIColor blueThemeColor];
 }
 
 @end

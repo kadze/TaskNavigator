@@ -12,6 +12,5 @@
 
 - (IBAction)onPointOnMap:(id)sender;
 - (IBAction)onSegmentedControlValueChanged:(id)sender;
-- (IBAction)onDistanceStepperChangeValue:(id)sender;
 
 @end

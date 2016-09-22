@@ -74,7 +74,7 @@
                                     <color key="textColor" red="0.21568627450980393" green="0.29019607843137252" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-Hi-J6J">
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-Hi-J6J" customClass="ASValueTrackingSlider">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="WOX-ii-iw2"/>
                                     </constraints>
@@ -107,7 +107,7 @@
                             <constraints>
                                 <constraint firstItem="gdo-Ls-APp" firstAttribute="top" secondItem="Tjx-N2-9wQ" secondAttribute="bottom" constant="8" id="1nK-T7-tdz"/>
                                 <constraint firstItem="mcW-2q-6ok" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="4fA-p3-cpP"/>
-                                <constraint firstItem="BRV-Hi-J6J" firstAttribute="top" secondItem="adg-N9-hbl" secondAttribute="bottom" constant="32" id="DCr-du-1yO"/>
+                                <constraint firstItem="BRV-Hi-J6J" firstAttribute="top" secondItem="adg-N9-hbl" secondAttribute="bottom" constant="38" id="DCr-du-1yO"/>
                                 <constraint firstItem="Tjx-N2-9wQ" firstAttribute="top" secondItem="A3W-fS-Ofn" secondAttribute="top" constant="8" id="GbQ-LP-5J9"/>
                                 <constraint firstItem="mcW-2q-6ok" firstAttribute="top" secondItem="cHo-Pc-ep3" secondAttribute="bottom" constant="8" id="PVj-JK-dGe"/>
                                 <constraint firstAttribute="trailing" secondItem="cHo-Pc-ep3" secondAttribute="trailing" constant="8" id="Pko-ry-Lih"/>

@@ -14,7 +14,7 @@
 
 #import "SAPViewControllerMacro.h"
 
-static NSString * const kSAPNavigationBarTitle      = @"Task";
+static NSString * const kSAPNavigationBarTitle = @"Task";
 
 SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 
