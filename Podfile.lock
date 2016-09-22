@@ -1,4 +1,5 @@
 PODS:
+  - ASValueTrackingSlider (0.12.1)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
@@ -6,15 +7,17 @@ PODS:
   - UIFloatLabelTextView (1.0.9)
 
 DEPENDENCIES:
+  - ASValueTrackingSlider (~> 0.12)
   - MagicalRecord
   - UIFloatLabelTextField
   - UIFloatLabelTextView
 
 SPEC CHECKSUMS:
+  ASValueTrackingSlider: 5261de3fcf00adb339efc93885e8f0bc99e703cd
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   UIFloatLabelTextField: b01b1bcea4b4fd617e80744f3cfd06e1d1b7e75e
   UIFloatLabelTextView: 44061fe88933a055e139c58a7c0ae8ca5a26d610
 
-PODFILE CHECKSUM: f91cc7fb6f0ab83fcd24c57b29313ae528d70ff5
+PODFILE CHECKSUM: 6547167b903a928f39e90bf7c2a3df995f58621a
 
 COCOAPODS: 1.0.1

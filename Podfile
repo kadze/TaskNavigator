@@ -8,6 +8,7 @@ target 'TaskNavigator' do
 	pod "MagicalRecord"	
 	pod "UIFloatLabelTextView"
         pod "UIFloatLabelTextField"
+	pod 'ASValueTrackingSlider', '~> 0.12'
   # Pods for TaskNavigator
 
 end
