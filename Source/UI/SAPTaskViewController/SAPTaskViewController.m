@@ -14,7 +14,6 @@
 
 #import "SAPViewControllerMacro.h"
 
-static CGFloat const kSAPDefaultConstrainConstant   = 8;
 static NSString * const kSAPNavigationBarTitle      = @"Task";
 
 SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
@@ -63,6 +62,7 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 - (IBAction)onPointOnMap:(UIButton *)sender {
     SAPTaskMapViewController *controller = [SAPTaskMapViewController new];
     [self fillModelFromMainView];
+#warning dont understand why fill from view
     controller.model = self.model;
     [self.navigationController pushViewController:controller animated:YES];
 }

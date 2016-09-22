@@ -26,14 +26,6 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 
 @synthesize model = _model;
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-//    [self.slider setMaximumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
-//    [self.slider setMinimumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
-    
-    return self;
-}
-
 #pragma mark -
 #pragma mark Accessors
 
