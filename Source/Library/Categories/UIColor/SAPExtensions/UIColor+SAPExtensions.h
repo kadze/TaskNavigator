@@ -12,4 +12,10 @@
 
 + (instancetype)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue;
 
++ (instancetype)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue alpha:(CGFloat)a;
+
++ (instancetype)colorWithHex:(UInt32)col alpha:(CGFloat)alpha;
+
++ (instancetype)colorWithHex:(UInt32)col;
+
 @end

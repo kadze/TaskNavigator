@@ -10,6 +10,12 @@
 
 #import "SAPTask.h"
 
+#import "UIColor+TaskNavigator.h"
+
+static CGFloat const kSAPDefaultBorderWidth = 1;
+
+static NSString * const kSAPNotesPlaceholder = @"Notes";
+
 @interface SAPTaskView ()
 
 - (NSString *)stringFromDouble:(double)value;
@@ -22,8 +28,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    [self.slider setMaximumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
-    [self.slider setMinimumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
+//    [self.slider setMaximumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
+//    [self.slider setMinimumTrackImage:[[UIImage imageNamed:@"Slider"]stretchableImageWithLeftCapWidth:9 topCapHeight:0]  forState:UIControlStateNormal];
     
     return self;
 }
@@ -45,7 +51,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGColorRef grayColor = [UIColor lightGrayColor].CGColor;
-    for (UIControl *control in @[self.titleTextField,
+    for (UIFloatLabelTextField *control in @[self.titleTextField,
                                  self.notesTextView,
                                  self.latitudeTextField,
                                  self.longtitudeTextField,
@@ -53,14 +59,15 @@
     {
         CALayer *layer = control.layer;
         layer.borderColor = grayColor;
-        layer.borderWidth = 1;
+        layer.borderWidth = kSAPDefaultBorderWidth;
+        
+        control.floatLabelActiveColor = [UIColor blueThemeColor];
     }
     
     UIButton *chooseButton = self.chooseOnMapButton;
     chooseButton.layer.cornerRadius = chooseButton.bounds.size.height / 2;
     
-    self.notesTextView.placeholder = @"Notes";
-    self.titleTextField.floatLabelActiveColor = [UIColor colorWithRed:55/255.0 green:74/255.0 blue:151/255.0 alpha:1.0];
+    self.notesTextView.placeholder = kSAPNotesPlaceholder;
 }
 
 #pragma mark -
