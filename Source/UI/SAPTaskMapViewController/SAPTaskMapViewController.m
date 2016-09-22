@@ -15,26 +15,42 @@
 
 #import "SAPDispatch.h"
 
+static NSString * const kSAPNavigationBarTitle = @"Tap to point";
+static NSString * const kSAPClearButtonTitle   = @"Clear";
+
 SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, mainView);
 
 @interface SAPTaskMapViewController ()
 
 - (MKMapView *)mapView;
+- (void)discardChoice;
+- (void)customizeNavigationItem;
 
 @end
 
 @implementation SAPTaskMapViewController
 
 @synthesize model = _model;
+
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setModel:(SAPModel *)model {
+- (void)setModel:(id)model {
     if (_model != model) {
+        [_model removeObserver:self];
         _model = model;
+        [_model addObserverObject:self];
     }
     
     [self finishModelSetting];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self customizeNavigationItem];
 }
 
 #pragma mark -
@@ -52,15 +68,17 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
     SAPDispatchAsyncOnDefaultQueue(^{
         [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
     });
-    
-    [self finishModelSetting];
 }
 
 #pragma mark -
 #pragma mark Public
 
+- (void)updateViewControllerWithModel:(id)model {
+    self.mainView.model = model;
+}
+
 - (void)finishModelSetting {
-    self.mainView.model = self.model;
+    [self updateViewControllerWithModel:self.model];
 }
 
 #pragma mark -
@@ -68,6 +86,24 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
 
 - (MKMapView *)mapView {
     return self.mainView.mapView;
+}
+
+- (void)discardChoice {
+    SAPTask *annotation = self.model;
+    annotation.coordinate = kCLLocationCoordinate2DInvalid;
+    SAPDispatchAsyncOnDefaultQueue(^{
+        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+    });
+}
+
+- (void)customizeNavigationItem {
+    self.navigationItem.title = kSAPNavigationBarTitle;
+    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithTitle:kSAPClearButtonTitle
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(discardChoice)];
+    
+    self.navigationItem.rightBarButtonItem = clearButton;
 }
 
 @end

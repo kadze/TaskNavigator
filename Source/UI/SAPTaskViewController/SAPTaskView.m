@@ -77,8 +77,14 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(SAPTask *)task {
-    self.latitudeTextField.text = [self stringFromDouble:task.latitude];
-    self.longtitudeTextField.text = [self stringFromDouble:task.longitude];
+    if (CLLocationCoordinate2DIsValid(task.coordinate)) {
+        self.latitudeTextField.text = [self stringFromDouble:task.latitude];
+        self.longtitudeTextField.text = [self stringFromDouble:task.longitude];
+    } else {
+        self.latitudeTextField.text = @"";
+        self.longtitudeTextField.text = @"";
+    }
+    
     self.titleTextField.text = task.title;
     self.notesTextView.text = task.notes;
     self.addressTextField.text = task.address;
