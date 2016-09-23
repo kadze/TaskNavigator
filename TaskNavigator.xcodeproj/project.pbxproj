@@ -96,6 +96,7 @@
 		5EEF87CC1D94179600DD9A98 /* UIColor+TaskNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87CB1D94179600DD9A98 /* UIColor+TaskNavigator.m */; };
 		5EEF87CE1D9422D400DD9A98 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEF87CD1D9422D400DD9A98 /* CoreLocation.framework */; };
 		5EEF87D01D9422DB00DD9A98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEF87CF1D9422DB00DD9A98 /* MapKit.framework */; };
+		5EEF87D71D95138000DD9A98 /* TaskNavigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87D51D95138000DD9A98 /* TaskNavigator.xcdatamodeld */; };
 		FF442FB415B8C469BA98E2F7 /* libPods-TaskNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */; };
 /* End PBXBuildFile section */
 
@@ -273,6 +274,7 @@
 		5EEF87CB1D94179600DD9A98 /* UIColor+TaskNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TaskNavigator.m"; sourceTree = "<group>"; };
 		5EEF87CD1D9422D400DD9A98 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5EEF87CF1D9422DB00DD9A98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5EEF87D61D95138000DD9A98 /* TaskNavigator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskNavigator.xcdatamodel; sourceTree = "<group>"; };
 		8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskNavigator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E6CF9270AA95C296D81777 /* Pods-TaskNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskNavigator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1027,6 +1029,7 @@
 			isa = PBXGroup;
 			children = (
 				55F26A421CE10490006EE91F /* SAPTask */,
+				5EEF87D11D95127400DD9A98 /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1166,6 +1169,14 @@
 				5EEF87C51D94173600DD9A98 /* UIColor+HexString.m */,
 			);
 			path = "UIColor-HexString";
+			sourceTree = "<group>";
+		};
+		5EEF87D11D95127400DD9A98 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5EEF87D51D95138000DD9A98 /* TaskNavigator.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1367,6 +1378,7 @@
 				55EFA2F41CDFE51D006E942A /* SAPAssignReference.m in Sources */,
 				55EFA2E71CDFE51D006E942A /* SAPCollectionChangeDoubleIndexModel.m in Sources */,
 				55EFA2D41CDFE51D006E942A /* NSFilemanager+SAPExtensions.m in Sources */,
+				5EEF87D71D95138000DD9A98 /* TaskNavigator.xcdatamodeld in Sources */,
 				55EFA2FB1CDFE51D006E942A /* SAPTableViewCell.m in Sources */,
 				55EFA2EE1CDFE51D006E942A /* UITableView+SAPCollectionChangeModel.m in Sources */,
 				55EFA2D61CDFE51D006E942A /* NSNumber+SAPExtentions.m in Sources */,
@@ -1510,6 +1522,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5EEF87D51D95138000DD9A98 /* TaskNavigator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5EEF87D61D95138000DD9A98 /* TaskNavigator.xcdatamodel */,
+			);
+			currentVersion = 5EEF87D61D95138000DD9A98 /* TaskNavigator.xcdatamodel */;
+			path = TaskNavigator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 55EFA1ED1CDFE3FC006E942A /* Project object */;
 }
