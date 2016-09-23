@@ -66,7 +66,8 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
     annotation.coordinate = coordinate;
     
     SAPDispatchAsyncOnDefaultQueue(^{
-        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+        [annotation performSelector:@selector(modelDidFinishLoading:)];
+//        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
     });
 }
 
@@ -92,7 +93,8 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
     SAPTask *annotation = self.model;
     annotation.coordinate = kCLLocationCoordinate2DInvalid;
     SAPDispatchAsyncOnDefaultQueue(^{
-        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+        [annotation performSelector:@selector(modelDidFinishLoading:)];
+//        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
     });
 }
 

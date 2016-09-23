@@ -6,6 +6,8 @@
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
+#import <MagicalRecord/MagicalRecord.h>
+
 #import "SAPTaskViewController.h"
 
 #import "SAPTask.h"
@@ -68,20 +70,20 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 
 - (IBAction)onSegmentedControlValueChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
-            case 0:
-                [self cancel];
+        case 0:
+            [self cancel];
             
-            break;
+        break;
             
-            case 1:
-                [self delete];
+        case 1:
+            [self delete];
             
-            break;
+        break;
             
-            case 2:
-                [self save];
+        case 2:
+            [self save];
             
-            break;
+        break;
     }
 }
 
@@ -104,15 +106,19 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 }
 
 - (void)cancel {
-    
+    [self.model MR_deleteEntity];
+    [self.navigationController popViewControllerAnimated:YES];
+#warning delete if new but not if edit
 }
 
 - (void)delete {
-    
+    [self.model MR_deleteEntity];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)save {
-    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

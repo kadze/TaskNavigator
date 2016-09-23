@@ -5,6 +5,7 @@
 //  Created by Andrey on 5/9/16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "SAPTasksViewController.h"
 
@@ -94,7 +95,7 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 
 - (void)onAddTask {
     SAPTaskViewController *controller = [SAPTaskViewController new];
-    controller.model = [SAPTask new];
+    controller.model = [SAPTask MR_createEntity];
     [self.navigationController pushViewController:controller animated:NO];
 }
 
