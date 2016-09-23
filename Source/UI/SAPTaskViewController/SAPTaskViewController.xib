@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAPTaskViewController">
+            <connections>
+                <outlet property="view" destination="uFH-xt-yAP" id="gFM-Mv-r6c"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="uFH-xt-yAP" customClass="SAPTaskView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-jD-yDE">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3W-fS-Ofn">
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjx-N2-9wQ" customClass="UIFloatLabelTextField">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="93T-WC-HUA"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-Ls-APp" customClass="UIFloatLabelTextView">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="fdc-TY-TfZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="fdc-TY-TfZ"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="fdc-TY-TfZ"/>
+                                        </mask>
+                                    </variation>
+                                </textView>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHo-Pc-ep3" customClass="UIFloatLabelTextField">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="QwH-qD-zfp"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQL-bi-R3l">
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="P9v-bu-m89"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Choose on map"/>
+                                    <connections>
+                                        <action selector="onPointOnMap:" destination="-1" eventType="touchUpInside" id="3J5-O2-bzV"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to notify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adg-N9-hbl">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="cRm-cv-ukL"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.21568627450980393" green="0.29019607843137252" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-Hi-J6J" customClass="ASValueTrackingSlider">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="WOX-ii-iw2"/>
+                                    </constraints>
+                                </slider>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-2q-6ok">
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lkp-LK-lZq" customClass="UIFloatLabelTextField">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Bnj-kh-1Nb"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longtitude" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbq-6P-U54" customClass="UIFloatLabelTextField">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="ll3-LS-Mcq"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jbq-6P-U54" firstAttribute="width" secondItem="Lkp-LK-lZq" secondAttribute="width" id="zCQ-vC-4oy"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="gdo-Ls-APp" firstAttribute="top" secondItem="Tjx-N2-9wQ" secondAttribute="bottom" constant="8" id="1nK-T7-tdz"/>
+                                <constraint firstItem="mcW-2q-6ok" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="4fA-p3-cpP"/>
+                                <constraint firstItem="BRV-Hi-J6J" firstAttribute="top" secondItem="adg-N9-hbl" secondAttribute="bottom" constant="38" id="DCr-du-1yO"/>
+                                <constraint firstItem="Tjx-N2-9wQ" firstAttribute="top" secondItem="A3W-fS-Ofn" secondAttribute="top" constant="8" id="GbQ-LP-5J9"/>
+                                <constraint firstItem="mcW-2q-6ok" firstAttribute="top" secondItem="cHo-Pc-ep3" secondAttribute="bottom" constant="8" id="PVj-JK-dGe"/>
+                                <constraint firstAttribute="trailing" secondItem="cHo-Pc-ep3" secondAttribute="trailing" constant="8" id="Pko-ry-Lih"/>
+                                <constraint firstItem="gdo-Ls-APp" firstAttribute="top" secondItem="Tjx-N2-9wQ" secondAttribute="bottom" constant="8" id="U1X-Ja-d2u"/>
+                                <constraint firstAttribute="trailing" secondItem="eQL-bi-R3l" secondAttribute="trailing" constant="8" id="Wwy-KD-PcM"/>
+                                <constraint firstItem="eQL-bi-R3l" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="XIj-SI-0Cb"/>
+                                <constraint firstItem="Tjx-N2-9wQ" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="XNJ-i9-Jez"/>
+                                <constraint firstAttribute="bottom" secondItem="BRV-Hi-J6J" secondAttribute="bottom" constant="24" id="bFV-pR-K3F"/>
+                                <constraint firstItem="adg-N9-hbl" firstAttribute="top" secondItem="eQL-bi-R3l" secondAttribute="bottom" constant="16" id="bWh-ak-kw8"/>
+                                <constraint firstItem="gdo-Ls-APp" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="ddZ-28-mJM"/>
+                                <constraint firstItem="cHo-Pc-ep3" firstAttribute="top" secondItem="gdo-Ls-APp" secondAttribute="bottom" constant="8" id="e9h-OS-Ep3"/>
+                                <constraint firstAttribute="trailing" secondItem="gdo-Ls-APp" secondAttribute="trailing" constant="8" id="fPc-hJ-5EY"/>
+                                <constraint firstItem="eQL-bi-R3l" firstAttribute="top" secondItem="mcW-2q-6ok" secondAttribute="bottom" constant="16" id="i57-ak-XBv"/>
+                                <constraint firstAttribute="trailing" secondItem="BRV-Hi-J6J" secondAttribute="trailing" constant="8" id="lqj-t4-NBy"/>
+                                <constraint firstItem="cHo-Pc-ep3" firstAttribute="top" secondItem="gdo-Ls-APp" secondAttribute="bottom" constant="8" id="mT9-YB-Rnr"/>
+                                <constraint firstItem="adg-N9-hbl" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="o7b-7u-rVh"/>
+                                <constraint firstAttribute="trailing" secondItem="mcW-2q-6ok" secondAttribute="trailing" constant="8" id="q5j-5p-0QO"/>
+                                <constraint firstItem="BRV-Hi-J6J" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="tdB-wg-d7c"/>
+                                <constraint firstItem="cHo-Pc-ep3" firstAttribute="leading" secondItem="A3W-fS-Ofn" secondAttribute="leading" constant="8" id="tdF-wy-R6s"/>
+                                <constraint firstAttribute="trailing" secondItem="Tjx-N2-9wQ" secondAttribute="trailing" constant="8" id="zYY-Zs-165"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="A3W-fS-Ofn" secondAttribute="trailing" id="8SP-M5-Wql"/>
+                        <constraint firstItem="A3W-fS-Ofn" firstAttribute="top" secondItem="R7y-jD-yDE" secondAttribute="top" id="EZd-jr-VuU"/>
+                        <constraint firstAttribute="bottom" secondItem="A3W-fS-Ofn" secondAttribute="bottom" id="G8l-K1-hXU"/>
+                        <constraint firstItem="A3W-fS-Ofn" firstAttribute="leading" secondItem="R7y-jD-yDE" secondAttribute="leading" id="Jb2-vi-rNP"/>
+                    </constraints>
+                </scrollView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-I6-ESl">
+                    <color key="backgroundColor" red="0.21568627450980393" green="0.29019607843137252" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="qBc-wu-B3Q"/>
+                    </constraints>
+                    <segments>
+                        <segment title="" image="Cancel"/>
+                        <segment title="" image="Delete"/>
+                        <segment title="" image="Save"/>
+                    </segments>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="onSegmentedControlValueChanged:" destination="-1" eventType="valueChanged" id="Uh5-VZ-Rlf"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="A3W-fS-Ofn" firstAttribute="leading" secondItem="uFH-xt-yAP" secondAttribute="leading" id="GN9-24-qco"/>
+                <constraint firstItem="7Ah-I6-ESl" firstAttribute="leading" secondItem="uFH-xt-yAP" secondAttribute="leading" id="Jcx-oD-NGs"/>
+                <constraint firstAttribute="bottom" secondItem="7Ah-I6-ESl" secondAttribute="bottom" id="LdX-nc-bbZ"/>
+                <constraint firstItem="R7y-jD-yDE" firstAttribute="top" secondItem="uFH-xt-yAP" secondAttribute="top" id="MxL-t3-vWp"/>
+                <constraint firstAttribute="trailing" secondItem="7Ah-I6-ESl" secondAttribute="trailing" id="Nqm-IH-Nv9"/>
+                <constraint firstItem="A3W-fS-Ofn" firstAttribute="top" secondItem="uFH-xt-yAP" secondAttribute="top" id="bRq-J6-qED"/>
+                <constraint firstAttribute="bottom" secondItem="R7y-jD-yDE" secondAttribute="bottom" constant="44" id="bdW-yX-GkR"/>
+                <constraint firstAttribute="bottom" secondItem="A3W-fS-Ofn" secondAttribute="bottom" constant="63" id="hUR-G0-X5T"/>
+                <constraint firstAttribute="trailing" secondItem="A3W-fS-Ofn" secondAttribute="trailing" id="tHA-Xi-0t5"/>
+                <constraint firstItem="R7y-jD-yDE" firstAttribute="leading" secondItem="uFH-xt-yAP" secondAttribute="leading" id="xKf-55-ozT"/>
+                <constraint firstAttribute="trailing" secondItem="R7y-jD-yDE" secondAttribute="trailing" id="yuv-pG-pco"/>
+            </constraints>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <exclude reference="bRq-J6-qED"/>
+                    <exclude reference="hUR-G0-X5T"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="addressTextField" destination="cHo-Pc-ep3" id="jIR-e6-lzq"/>
+                <outlet property="chooseOnMapButton" destination="eQL-bi-R3l" id="5j5-Et-0hj"/>
+                <outlet property="latitudeTextField" destination="Lkp-LK-lZq" id="aCD-gT-IxB"/>
+                <outlet property="longtitudeTextField" destination="jbq-6P-U54" id="NHW-fo-GLB"/>
+                <outlet property="notesTextView" destination="gdo-Ls-APp" id="DYq-UH-Bkz"/>
+                <outlet property="segmentedControl" destination="7Ah-I6-ESl" id="7CT-cu-2Ev"/>
+                <outlet property="slider" destination="BRV-Hi-J6J" id="8TI-VE-Uxh"/>
+                <outlet property="titleTextField" destination="Tjx-N2-9wQ" id="RrR-aA-DTy"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cancel" width="22" height="25"/>
+        <image name="Delete" width="21" height="29"/>
+        <image name="Save" width="22" height="28"/>
+    </resources>
+</document>
