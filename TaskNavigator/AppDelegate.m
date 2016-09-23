@@ -6,6 +6,7 @@
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 #import <UIKit/UIAppearance.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "AppDelegate.h"
 
@@ -26,6 +27,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow *window = [UIWindow window];
     self.window = window;
+    
+    [MagicalRecord setupCoreDataStack];
     
     SAPTasksViewController *controller = [SAPTasksViewController new];
     
