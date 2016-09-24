@@ -55,6 +55,7 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
     model.address = self.addressTextField.text;
     model.longitude = self.longtitudeTextField.text.doubleValue;
     model.latitude = self.latitudeTextField.text.doubleValue;
+    model.notificationDistance = self.slider.value;
 }
 
 #pragma mark -
@@ -72,6 +73,7 @@ static NSString * const kSAPNotesPlaceholder = @"Notes";
     self.titleTextField.text = task.title;
     self.notesTextView.text = task.notes;
     self.addressTextField.text = task.address;
+    self.slider.value = task.notificationDistance;
 }
 
 #pragma mark -
