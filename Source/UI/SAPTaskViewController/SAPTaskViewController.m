@@ -112,7 +112,6 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 - (void)cancel {
     [self.model MR_deleteEntity];
     [self.navigationController popViewControllerAnimated:YES];
-#warning delete if new but not if edit
 }
 
 - (void)delete {
