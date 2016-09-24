@@ -13,7 +13,7 @@
 #import "SAPTaskCell.h"
 #import "SAPTaskViewController.h"
 #import "SAPTask.h"
-#import "SAPArrayModel.h"
+#import "SAPTasksContext.h"
 
 #import "SAPViewControllerMacro.h"
 
@@ -50,6 +50,17 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 }
 
 #pragma mark -
+#pragma mark Accessors
+
+- (UITableView *)tableView {
+    return self.mainView.tableView;
+}
+
+- (SAPContext *)itemsContext {
+    return [SAPTasksContext contextWithModel:self.items];
+}
+
+#pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
@@ -59,13 +70,6 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
     NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeTop multiplier:1 constant:topOffset];
     
     [NSLayoutConstraint activateConstraints:@[top]];
-}
-
-#pragma mark -
-#pragma mark Accessors
-
-- (UITableView *)tableView {
-    return self.mainView.tableView;
 }
 
 #pragma mark -

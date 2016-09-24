@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 
 #import "SAPTasksViewController.h"
+#import "SAPTasks.h"
+#import "SAPTask.h"
+
 #import "SAPColor.h"
 
 #import "UIWindow+SAPExtensions.h"
@@ -31,6 +34,7 @@
     [MagicalRecord setupCoreDataStack];
     
     SAPTasksViewController *controller = [SAPTasksViewController new];
+    controller.items = [[SAPTasks alloc] initWithFetchedResultsControllerForContext:[NSManagedObjectContext MR_defaultContext] entity:SAPTask.entity];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
     

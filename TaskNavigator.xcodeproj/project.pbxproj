@@ -97,6 +97,9 @@
 		5EEF87CE1D9422D400DD9A98 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEF87CD1D9422D400DD9A98 /* CoreLocation.framework */; };
 		5EEF87D01D9422DB00DD9A98 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEF87CF1D9422DB00DD9A98 /* MapKit.framework */; };
 		5EEF87D71D95138000DD9A98 /* TaskNavigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87D51D95138000DD9A98 /* TaskNavigator.xcdatamodeld */; };
+		5EEF87E31D95785300DD9A98 /* SAPTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87E21D95785300DD9A98 /* SAPTasks.m */; };
+		5EEF87E71D95790900DD9A98 /* SAPCoreDataArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87E61D95790900DD9A98 /* SAPCoreDataArrayViewController.m */; };
+		5EEF87EB1D957D7100DD9A98 /* SAPTasksContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87EA1D957D7100DD9A98 /* SAPTasksContext.m */; };
 		FF442FB415B8C469BA98E2F7 /* libPods-TaskNavigator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */; };
 /* End PBXBuildFile section */
 
@@ -275,6 +278,12 @@
 		5EEF87CD1D9422D400DD9A98 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5EEF87CF1D9422DB00DD9A98 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5EEF87D61D95138000DD9A98 /* TaskNavigator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskNavigator.xcdatamodel; sourceTree = "<group>"; };
+		5EEF87E11D95785300DD9A98 /* SAPTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTasks.h; sourceTree = "<group>"; };
+		5EEF87E21D95785300DD9A98 /* SAPTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTasks.m; sourceTree = "<group>"; };
+		5EEF87E51D95790900DD9A98 /* SAPCoreDataArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPCoreDataArrayViewController.h; sourceTree = "<group>"; };
+		5EEF87E61D95790900DD9A98 /* SAPCoreDataArrayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPCoreDataArrayViewController.m; sourceTree = "<group>"; };
+		5EEF87E91D957D7100DD9A98 /* SAPTasksContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTasksContext.h; sourceTree = "<group>"; };
+		5EEF87EA1D957D7100DD9A98 /* SAPTasksContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTasksContext.m; sourceTree = "<group>"; };
 		8C5741C96A6025C087FFFFB0 /* libPods-TaskNavigator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskNavigator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E6CF9270AA95C296D81777 /* Pods-TaskNavigator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskNavigator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskNavigator/Pods-TaskNavigator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +390,7 @@
 			children = (
 				55F26A381CE1032F006EE91F /* UI */,
 				55EFA2C91CDFE51D006E942A /* Models */,
+				5EEF87E81D957D3800DD9A98 /* Contexts */,
 				55EFA2101CDFE51D006E942A /* Library */,
 			);
 			path = Source;
@@ -915,6 +925,7 @@
 			children = (
 				55EFA2A31CDFE51D006E942A /* SAPArrayViewController.h */,
 				55EFA2A41CDFE51D006E942A /* SAPArrayViewController.m */,
+				5EEF87E41D9578E900DD9A98 /* SAPCoreDataArrayViewController */,
 			);
 			path = SAPArrayViewController;
 			sourceTree = "<group>";
@@ -1029,6 +1040,7 @@
 			isa = PBXGroup;
 			children = (
 				55F26A421CE10490006EE91F /* SAPTask */,
+				5EEF87E01D95781600DD9A98 /* SAPTasks */,
 				5EEF87D11D95127400DD9A98 /* CoreData */,
 			);
 			path = Models;
@@ -1177,6 +1189,33 @@
 				5EEF87D51D95138000DD9A98 /* TaskNavigator.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5EEF87E01D95781600DD9A98 /* SAPTasks */ = {
+			isa = PBXGroup;
+			children = (
+				5EEF87E11D95785300DD9A98 /* SAPTasks.h */,
+				5EEF87E21D95785300DD9A98 /* SAPTasks.m */,
+			);
+			path = SAPTasks;
+			sourceTree = "<group>";
+		};
+		5EEF87E41D9578E900DD9A98 /* SAPCoreDataArrayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5EEF87E51D95790900DD9A98 /* SAPCoreDataArrayViewController.h */,
+				5EEF87E61D95790900DD9A98 /* SAPCoreDataArrayViewController.m */,
+			);
+			path = SAPCoreDataArrayViewController;
+			sourceTree = "<group>";
+		};
+		5EEF87E81D957D3800DD9A98 /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				5EEF87E91D957D7100DD9A98 /* SAPTasksContext.h */,
+				5EEF87EA1D957D7100DD9A98 /* SAPTasksContext.m */,
+			);
+			path = Contexts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1355,10 +1394,12 @@
 				55EFA2D11CDFE51D006E942A /* NSObject+SAPJSONObject.m in Sources */,
 				55EFA1FA1CDFE3FC006E942A /* main.m in Sources */,
 				55EFA2DC1CDFE51D006E942A /* NSURL+SAPExtensions.m in Sources */,
+				5EEF87E71D95790900DD9A98 /* SAPCoreDataArrayViewController.m in Sources */,
 				55EFA2E81CDFE51D006E942A /* SAPCollectionChangeIndexModel+UITableView.m in Sources */,
 				55EFA2D81CDFE51D006E942A /* NSObject+SAPExtensions.m in Sources */,
 				55EFA2FA1CDFE51D006E942A /* SAPImageView.m in Sources */,
 				55F26A4C1CE10776006EE91F /* SAPTaskCell.m in Sources */,
+				5EEF87EB1D957D7100DD9A98 /* SAPTasksContext.m in Sources */,
 				55EFA2D51CDFE51D006E942A /* NSIndexPath+SAPExtensions.m in Sources */,
 				5EEF87C81D94173600DD9A98 /* README.md in Sources */,
 				55EFA2F71CDFE51D006E942A /* SAPViewController.m in Sources */,
@@ -1370,6 +1411,7 @@
 				55EFA2E61CDFE51D006E942A /* SAPCollectionChangeDoubleIndexModel +UITableView.m in Sources */,
 				550886E21CE2465A00B417F7 /* SAPTasksMapViewController.m in Sources */,
 				5EEF87CC1D94179600DD9A98 /* UIColor+TaskNavigator.m in Sources */,
+				5EEF87E31D95785300DD9A98 /* SAPTasks.m in Sources */,
 				55EFA2D01CDFE51D006E942A /* NSNumber+SAPJSONNumber.m in Sources */,
 				55EFA2E51CDFE51D006E942A /* SAPManagedObject.m in Sources */,
 				55EFA2DB1CDFE51D006E942A /* NSString+SAPExtensions.m in Sources */,

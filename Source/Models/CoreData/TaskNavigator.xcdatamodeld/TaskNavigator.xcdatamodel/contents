@@ -9,6 +9,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SAPTask" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="SAPTask" positionX="-36" positionY="9" width="128" height="133"/>
     </elements>
 </model>

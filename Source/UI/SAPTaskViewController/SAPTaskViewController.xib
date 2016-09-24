@@ -8,12 +8,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAPTaskViewController">
             <connections>
-                <outlet property="view" destination="uFH-xt-yAP" id="gFM-Mv-r6c"/>
+                <outlet property="view" destination="uFH-xt-yAP" id="srI-ey-No7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="uFH-xt-yAP" customClass="SAPTaskView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-jD-yDE">
@@ -175,14 +175,14 @@
                 </mask>
             </variation>
             <connections>
-                <outlet property="addressTextField" destination="cHo-Pc-ep3" id="jIR-e6-lzq"/>
-                <outlet property="chooseOnMapButton" destination="eQL-bi-R3l" id="5j5-Et-0hj"/>
-                <outlet property="latitudeTextField" destination="Lkp-LK-lZq" id="aCD-gT-IxB"/>
-                <outlet property="longtitudeTextField" destination="jbq-6P-U54" id="NHW-fo-GLB"/>
-                <outlet property="notesTextView" destination="gdo-Ls-APp" id="DYq-UH-Bkz"/>
-                <outlet property="segmentedControl" destination="7Ah-I6-ESl" id="7CT-cu-2Ev"/>
-                <outlet property="slider" destination="BRV-Hi-J6J" id="8TI-VE-Uxh"/>
-                <outlet property="titleTextField" destination="Tjx-N2-9wQ" id="RrR-aA-DTy"/>
+                <outlet property="addressTextField" destination="cHo-Pc-ep3" id="Jls-dd-Sgn"/>
+                <outlet property="chooseOnMapButton" destination="eQL-bi-R3l" id="wg7-qF-QGT"/>
+                <outlet property="latitudeTextField" destination="Lkp-LK-lZq" id="hhe-pg-Rle"/>
+                <outlet property="longtitudeTextField" destination="jbq-6P-U54" id="3Vv-Dd-v4F"/>
+                <outlet property="notesTextView" destination="gdo-Ls-APp" id="Sbe-EW-OgY"/>
+                <outlet property="segmentedControl" destination="7Ah-I6-ESl" id="myQ-9f-XZj"/>
+                <outlet property="slider" destination="BRV-Hi-J6J" id="XNe-r6-gH8"/>
+                <outlet property="titleTextField" destination="Tjx-N2-9wQ" id="of5-Lq-tPx"/>
             </connections>
             <point key="canvasLocation" x="35" y="80"/>
         </view>

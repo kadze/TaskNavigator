@@ -15,11 +15,11 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic notificationDistance;
+@dynamic address;
 @dynamic title;
 @dynamic notes;
-@dynamic address;
 
-@dynamic coordinate;
+//@dynamic coordinate;
 
 #pragma mark -
 #pragma mark Accessors
