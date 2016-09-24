@@ -117,6 +117,7 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 
 - (void)delete {
     [self.model MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
