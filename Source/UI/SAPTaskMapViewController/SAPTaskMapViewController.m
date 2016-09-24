@@ -66,8 +66,8 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
     annotation.coordinate = coordinate;
     
     SAPDispatchAsyncOnDefaultQueue(^{
-        [annotation performSelector:@selector(modelDidFinishLoading:)];
-//        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+        //SAPTask uses message forwarding to SAPModel which is subclass of SAPObservableObject
+        [(SAPObservableObject *)annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
     });
 }
 
