@@ -90,6 +90,10 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 #pragma mark -
 #pragma mark Public
 
+- (void)finishModelSetting {
+    [self updateViewControllerWithModel:self.model];
+}
+
 - (void)updateViewControllerWithModel:(id)model {
     self.mainView.model = model;
 }

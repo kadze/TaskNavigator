@@ -44,8 +44,10 @@
         _model = model;
         [_model addObserverObject:self];
         
-        [self finishModelSetting];
+//        [self finishModelSetting]; //need to be outside the brackets for second execution when view did load. Because at that moment model is already set
     }
+    
+    [self finishModelSetting];
 }
 
 - (SAPContext *)modelContext {
