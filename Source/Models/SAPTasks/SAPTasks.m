@@ -8,7 +8,9 @@
 
 #import "SAPTasks.h"
 
-static NSString * const kSAPDescriptorKey = @"firstName";
+#import "SAPTaskProperties.h"
+
+static NSString * const kSAPDescriptorKey = @"title";
 
 @implementation SAPTasks
 
@@ -16,7 +18,7 @@ static NSString * const kSAPDescriptorKey = @"firstName";
 #pragma mark Public
 
 - (NSArray *)fetchedResultsControllerSortDescriptors {
-    return @[[NSSortDescriptor sortDescriptorWithKey:kSAPDescriptorKey ascending:YES]];
+    return @[[NSSortDescriptor sortDescriptorWithKey:[SAPTaskProperties title] ascending:YES]];
 }
 
 @end

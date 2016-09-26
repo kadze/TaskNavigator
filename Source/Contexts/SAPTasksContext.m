@@ -11,12 +11,13 @@
 #import "SAPTasksContext.h"
 
 #import "SAPTask.h"
+#import "SAPTaskProperties.h"
 #import "SAPTasks.h"
 
 @implementation SAPTasksContext
 
 - (void)stateUnsafeLoad {
-    NSArray *tasks = [SAPTask MR_findAll];
+    NSArray *tasks = [SAPTask MR_findAllSortedBy:[SAPTaskProperties title] ascending:YES];
     SAPTasks *items = self.model;
     for (SAPTask *task in tasks) {
         [items addObject:task];

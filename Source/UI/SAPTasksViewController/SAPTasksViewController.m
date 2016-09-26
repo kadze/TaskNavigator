@@ -77,6 +77,7 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
                                                                  action:@selector(onAddTask)];
+    
     self.navigationItem.rightBarButtonItem = addButton;
 }
 

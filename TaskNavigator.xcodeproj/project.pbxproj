@@ -89,6 +89,7 @@
 		55F26A4E1CE10DBE006EE91F /* SAPTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F26A4D1CE10DBE006EE91F /* SAPTaskCell.xib */; };
 		55F26A521CE1149B006EE91F /* SAPTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F26A501CE1149B006EE91F /* SAPTaskViewController.m */; };
 		55F26A531CE1149B006EE91F /* SAPTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */; };
+		5EAF3FEE1D9923800006DABA /* SAPTaskProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF3FED1D9923800006DABA /* SAPTaskProperties.m */; };
 		5EEF87C61D94173600DD9A98 /* UIColor+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */; };
 		5EEF87C71D94173600DD9A98 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5EEF87C21D94173600DD9A98 /* LICENSE */; };
 		5EEF87C81D94173600DD9A98 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87C31D94173600DD9A98 /* README.md */; };
@@ -267,6 +268,8 @@
 		55F26A4F1CE1149B006EE91F /* SAPTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskViewController.h; sourceTree = "<group>"; };
 		55F26A501CE1149B006EE91F /* SAPTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskViewController.m; sourceTree = "<group>"; };
 		55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPTaskViewController.xib; sourceTree = "<group>"; };
+		5EAF3FEC1D9923800006DABA /* SAPTaskProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskProperties.h; sourceTree = "<group>"; };
+		5EAF3FED1D9923800006DABA /* SAPTaskProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskProperties.m; sourceTree = "<group>"; };
 		5EEF87BE1D94173600DD9A98 /* UIColor+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAPExtensions.h"; sourceTree = "<group>"; };
 		5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAPExtensions.m"; sourceTree = "<group>"; };
 		5EEF87C21D94173600DD9A98 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -1120,6 +1123,8 @@
 			children = (
 				55F26A431CE104D2006EE91F /* SAPTask.h */,
 				55F26A441CE104D2006EE91F /* SAPTask.m */,
+				5EAF3FEC1D9923800006DABA /* SAPTaskProperties.h */,
+				5EAF3FED1D9923800006DABA /* SAPTaskProperties.m */,
 			);
 			path = SAPTask;
 			sourceTree = "<group>";
@@ -1402,6 +1407,7 @@
 				5EEF87EB1D957D7100DD9A98 /* SAPTasksContext.m in Sources */,
 				55EFA2D51CDFE51D006E942A /* NSIndexPath+SAPExtensions.m in Sources */,
 				5EEF87C81D94173600DD9A98 /* README.md in Sources */,
+				5EAF3FEE1D9923800006DABA /* SAPTaskProperties.m in Sources */,
 				55EFA2F71CDFE51D006E942A /* SAPViewController.m in Sources */,
 				55EFA2F81CDFE51D006E942A /* SAPActivityIndicator.m in Sources */,
 				55EFA2CF1CDFE51D006E942A /* NSNull+SAPJSONNull.m in Sources */,
