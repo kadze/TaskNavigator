@@ -99,6 +99,12 @@
     }
 }
 
+- (void)updateObjectAtIndex:(NSUInteger)index {
+    @synchronized(self) {
+        [self notifyWithChangeModel:[SAPCollectionChangeModel updatingModelWithIndex:index]];
+    }
+}
+
 - (void)replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject {
     @synchronized(self) {
         [self.mutableObjects replaceObjectAtIndex:index withObject:anObject];
