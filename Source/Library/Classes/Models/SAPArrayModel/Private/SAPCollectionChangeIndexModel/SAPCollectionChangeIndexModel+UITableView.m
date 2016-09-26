@@ -50,7 +50,7 @@
                 break;
                 
             case kSAPChangeTypeObjectUpdated:
-                [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+                [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
                 
                 break;
                 
