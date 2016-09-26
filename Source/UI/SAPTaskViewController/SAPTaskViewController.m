@@ -56,6 +56,14 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    NSLog(@"%d", ((NSManagedObject *)self.model).isInserted);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.movingFromParentViewController) {
+        [self deleteIfInserted];
+    }
 }
 
 #pragma mark -
@@ -110,7 +118,7 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 }
 
 - (void)cancel {
-    [self.model MR_deleteEntity];
+    [self deleteIfInserted];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -124,6 +132,13 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
     [self fillModelFromMainView];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)deleteIfInserted {
+    SAPTask *model = self.model;
+    if (model.inserted) {
+        [self.model MR_deleteEntity];
+    }
 }
 
 @end

@@ -51,7 +51,6 @@
     switch (type) {
         case NSFetchedResultsChangeInsert: {
             [self performBlockWithNotification:^{
-//                [self addObject:anObject];
                 [self insertObject:anObject atIndex:newIndexPath.row];
             }];
         }
@@ -85,7 +84,6 @@
         default:
             break;
     }
-
 }
 
 #pragma mark -
