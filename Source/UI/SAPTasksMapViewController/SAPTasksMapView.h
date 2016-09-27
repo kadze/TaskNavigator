@@ -6,8 +6,13 @@
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
+
 #import "SAPView.h"
 
-@interface SAPTasksMapView : SAPView
+#import "SAPModelView.h"
+
+@interface SAPTasksMapView : SAPView <SAPModelView>
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
 @end

@@ -12,4 +12,6 @@
 
 @interface SAPTasksViewController : SAPCoreDataArrayViewController
 
+- (IBAction)onMapButtonTap:(UIButton *)sender;
+
 @end

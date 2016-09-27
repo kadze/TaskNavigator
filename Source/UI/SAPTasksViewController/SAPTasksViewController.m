@@ -12,6 +12,7 @@
 #import "SAPTasksView.h"
 #import "SAPTaskCell.h"
 #import "SAPTaskViewController.h"
+#import "SAPTasksMapViewController.h"
 #import "SAPTask.h"
 #import "SAPTasksContext.h"
 
@@ -58,6 +59,15 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 
 - (SAPContext *)itemsContext {
     return [SAPTasksContext contextWithModel:self.items];
+}
+
+#pragma mark -
+#pragma mark Interface Handling
+
+- (IBAction)onMapButtonTap:(UIButton *)sender {
+    SAPTasksMapViewController *controller = [SAPTasksMapViewController new];
+    controller.model = self.items;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark -

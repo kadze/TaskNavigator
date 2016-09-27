@@ -33,11 +33,6 @@
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(id<MKAnnotation>)model {
-    CLLocationCoordinate2D coordinate = model.coordinate;
-    if (CLLocationCoordinate2DIsValid(coordinate)) {
-        id<MKAnnotation> annotation = self.model;
-        annotation.coordinate = model.coordinate;
-    }
 }
 
 @end
