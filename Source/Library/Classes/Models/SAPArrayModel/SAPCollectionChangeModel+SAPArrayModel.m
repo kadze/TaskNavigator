@@ -31,6 +31,10 @@
     return [SAPCollectionChangeIndexModel modelWithChangeType:kSAPChangeTypeObjectReplaced index:index];
 }
 
++ (instancetype)updatingModelWithIndex:(NSUInteger)index {
+    return  [SAPCollectionChangeIndexModel modelWithChangeType:kSAPChangeTypeObjectUpdated index:index];
+}
+
 //SAPCollectionChangeDoubleIndexModel
 
 + (instancetype)movingModelFromIndex:(NSUInteger)fromIndex

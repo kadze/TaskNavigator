@@ -6,6 +6,8 @@
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
+#import <MagicalRecord/MagicalRecord.h>
+
 #import "SAPTaskViewController.h"
 
 #import "SAPTask.h"
@@ -54,6 +56,14 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    NSLog(@"%d", ((NSManagedObject *)self.model).isInserted);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.movingFromParentViewController) {
+        [self deleteIfInserted];
+    }
 }
 
 #pragma mark -
@@ -68,25 +78,29 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 
 - (IBAction)onSegmentedControlValueChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
-            case 0:
-                [self cancel];
+        case 0:
+            [self cancel];
             
-            break;
+        break;
             
-            case 1:
-                [self delete];
+        case 1:
+            [self delete];
             
-            break;
+        break;
             
-            case 2:
-                [self save];
+        case 2:
+            [self save];
             
-            break;
+        break;
     }
 }
 
 #pragma mark -
 #pragma mark Public
+
+- (void)finishModelSetting {
+    [self updateViewControllerWithModel:self.model];
+}
 
 - (void)updateViewControllerWithModel:(id)model {
     self.mainView.model = model;
@@ -104,15 +118,27 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 }
 
 - (void)cancel {
-    
+    [self deleteIfInserted];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)delete {
-    
+    [self.model MR_deleteEntity];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)save {
-    
+    [self fillModelFromMainView];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)deleteIfInserted {
+    SAPTask *model = self.model;
+    if (model.inserted) {
+        [self.model MR_deleteEntity];
+    }
 }
 
 @end

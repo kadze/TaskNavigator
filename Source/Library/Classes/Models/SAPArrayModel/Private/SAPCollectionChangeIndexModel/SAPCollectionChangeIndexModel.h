@@ -13,6 +13,7 @@ typedef NS_ENUM (NSUInteger, SAPArrayIndexChangeType) {
     kSAPChangeTypeObjectInserted,
     kSAPChangeTypeObjectRemoved,
     kSAPChangeTypeObjectReplaced,
+    kSAPChangeTypeObjectUpdated
 };
 
 @interface SAPCollectionChangeIndexModel : SAPCollectionChangeModel

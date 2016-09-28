@@ -14,6 +14,7 @@
 + (instancetype)insertionModelWithIndex:(NSUInteger)index;
 + (instancetype)removalModelWithIndex:(NSUInteger)index;
 + (instancetype)replacementModelWithIndex:(NSUInteger)index;
++ (instancetype)updatingModelWithIndex:(NSUInteger)index;
 
 + (instancetype)movingModelFromIndex:(NSUInteger)fromIndex
                              toIndex:(NSUInteger)toIndex;

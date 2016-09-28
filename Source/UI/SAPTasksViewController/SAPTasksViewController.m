@@ -5,14 +5,16 @@
 //  Created by Andrey on 5/9/16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "SAPTasksViewController.h"
 
 #import "SAPTasksView.h"
 #import "SAPTaskCell.h"
 #import "SAPTaskViewController.h"
+#import "SAPTasksMapViewController.h"
 #import "SAPTask.h"
-#import "SAPArrayModel.h"
+#import "SAPTasksContext.h"
 
 #import "SAPViewControllerMacro.h"
 
@@ -49,22 +51,23 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 }
 
 #pragma mark -
-#pragma mark View Lifecycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    CGFloat topOffset = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeTop multiplier:1 constant:topOffset];
-    
-    [NSLayoutConstraint activateConstraints:@[top]];
-}
-
-#pragma mark -
 #pragma mark Accessors
 
 - (UITableView *)tableView {
     return self.mainView.tableView;
+}
+
+- (SAPContext *)itemsContext {
+    return [SAPTasksContext contextWithModel:self.items];
+}
+
+#pragma mark -
+#pragma mark Interface Handling
+
+- (IBAction)onMapButtonTap:(UIButton *)sender {
+    SAPTasksMapViewController *controller = [SAPTasksMapViewController new];
+    controller.model = self.items;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark -
@@ -84,6 +87,7 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
                                                                  action:@selector(onAddTask)];
+    
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -94,7 +98,7 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 
 - (void)onAddTask {
     SAPTaskViewController *controller = [SAPTaskViewController new];
-    controller.model = [SAPTask new];
+    controller.model = [SAPTask MR_createEntity];
     [self.navigationController pushViewController:controller animated:NO];
 }
 

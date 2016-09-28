@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SAPArrayViewController.h"
+#import "SAPCoreDataArrayViewController.h"
 
-@interface SAPTasksViewController : SAPArrayViewController
+@interface SAPTasksViewController : SAPCoreDataArrayViewController
+
+- (IBAction)onMapButtonTap:(UIButton *)sender;
 
 @end

@@ -11,5 +11,6 @@
 
 @interface SAPTasksView : SAPView
 @property (nonatomic, strong) IBOutlet UITableView  *tableView;
+@property (nonatomic, strong) IBOutlet UIButton     *mapButton;
 
 @end

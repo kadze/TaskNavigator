@@ -9,6 +9,7 @@
 #import "SAPCoreDataArrayModel.h"
 
 #import <CoreData/NSEntityDescription.h>
+#import <UIKit/UITableView.h>
 
 @implementation SAPCoreDataArrayModel
 
@@ -19,12 +20,21 @@
                                                     entity:(NSEntityDescription *)entity
 {
     self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
     NSFetchRequest *fetchedRequest = [NSFetchRequest fetchRequestWithEntityName:entity.managedObjectClassName];
     fetchedRequest.sortDescriptors = [self fetchedResultsControllerSortDescriptors];
     
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchedRequest
-                                                                        managedObjectContext:context
-                                                                          sectionNameKeyPath:nil cacheName:nil];;
+    NSFetchedResultsController *fetchedController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchedRequest
+                                                                                        managedObjectContext:context
+                                                                                          sectionNameKeyPath:nil cacheName:nil];
+    
+    self.fetchedResultsController = fetchedController;
+    fetchedController.delegate = self;
+    NSError *error;
+    [fetchedController performFetch:&error];
     
     return self;
 }
@@ -38,10 +48,41 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(nullable NSIndexPath *)newIndexPath
 {
-    if (NSFetchedResultsChangeInsert == type) {
-        [self performBlockWithoutNotification:^{
-            [self addObject:anObject];
-        }];
+    switch (type) {
+        case NSFetchedResultsChangeInsert: {
+            [self performBlockWithNotification:^{
+                [self insertObject:anObject atIndex:newIndexPath.row];
+            }];
+        }
+            
+            break;
+         
+        case NSFetchedResultsChangeUpdate: {
+            [self performBlockWithNotification:^{
+                [self updateObjectAtIndex:indexPath.row];
+            }];
+        }
+            
+            break;
+            
+        case NSFetchedResultsChangeDelete: {
+            [self performBlockWithNotification:^{
+                [self removeObjectAtIndex:indexPath.row];
+            }];
+        }
+            
+            break;
+        
+        case NSFetchedResultsChangeMove: {
+            [self performBlockWithNotification:^{
+                [self moveObjectFromIndex:indexPath.row toIndex:newIndexPath.row];
+            }];
+        }
+            
+            break;
+            
+        default:
+            break;
     }
 }
 

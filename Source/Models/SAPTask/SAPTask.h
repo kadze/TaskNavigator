@@ -7,18 +7,19 @@
 //
 #import <CoreLocation/CLLocation.h>
 #import <MapKit/MKAnnotation.h>
+#import "SAPManagedObject.h"
 
 #import "SAPModel.h"
 
-@interface SAPTask : SAPModel <MKAnnotation>
+@interface SAPTask : SAPManagedObject <MKAnnotation>
 @property (nonatomic, assign) CLLocationDegrees   latitude;
 @property (nonatomic, assign) CLLocationDegrees   longitude;
 @property (nonatomic, assign) CLLocationDistance  notificationDistance;
 
-@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, copy)   NSString *title;
+@property (nonatomic, strong) NSString *notes;
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *notes;
-@property (nonatomic, copy) NSString *address;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 @end

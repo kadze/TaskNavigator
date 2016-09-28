@@ -6,7 +6,7 @@
 //  Copyright © 2016 Andrey. All rights reserved.
 //
 
-#import "SAPViewController.h"
+#import "SAPCoreDataArrayViewController.h"
 
 @interface SAPTasksMapViewController : SAPViewController
 

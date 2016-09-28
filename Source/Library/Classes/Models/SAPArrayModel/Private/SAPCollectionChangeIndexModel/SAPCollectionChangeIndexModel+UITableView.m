@@ -49,6 +49,11 @@
                                  withRowAnimation:UITableViewRowAnimationFade];
                 break;
                 
+            case kSAPChangeTypeObjectUpdated:
+                [tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                
+                break;
+                
             default:
                 break;
         }
