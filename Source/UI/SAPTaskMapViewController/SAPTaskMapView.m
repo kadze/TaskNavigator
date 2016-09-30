@@ -43,7 +43,18 @@
 #pragma mark MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    [self.mapView zoomToUserLocation];
+    //if there is valid annotation - zoom to it, if not - zoom to user location;
+    NSArray *annotations = mapView.annotations;
+    if (annotations.count) {
+        id <MKAnnotation> annotation = annotations.firstObject;
+        CLLocationCoordinate2D coordinate = annotation.coordinate;
+        if (CLLocationCoordinate2DIsValid(coordinate)) {
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+            [mapView setRegion:region animated:YES];
+        }
+    } else {
+        [self.mapView zoomToUserLocation];
+    }
 }
 
 @end
