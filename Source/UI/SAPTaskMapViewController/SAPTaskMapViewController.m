@@ -51,6 +51,7 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customizeNavigationItem];
+    self.mapView.showsUserLocation = ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways);
 }
 
 #pragma mark -

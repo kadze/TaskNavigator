@@ -10,9 +10,19 @@
 
 #import "SAPTask.h"
 
+#import "MKMapView+SAPExtensions.h"
+
 @implementation SAPTaskMapView
 
 @synthesize model = _model;
+
+#pragma mark -
+#pragma mark Initial Setup
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.mapView.delegate = self;
+}
 
 #pragma mark -
 #pragma mark Accessors
@@ -33,6 +43,13 @@
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(id<MKAnnotation>)model {
+}
+
+#pragma mark -
+#pragma mark MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    [self.mapView zoomToUserLocation];
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "SAPTasksMapViewController.h"
 #import "SAPTask.h"
 #import "SAPTasksContext.h"
+#import "SAPLocationService.h"
 
 #import "SAPViewControllerMacro.h"
 
@@ -23,7 +24,8 @@ static NSString * const kSAPAddButtonImageName = @"AddButton";
 
 SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView);
 
-@interface SAPTasksViewController ()
+@interface SAPTasksViewController () <CLLocationManagerDelegate>
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 - (void)customizeNavigationBar;
 - (void)customizeRightBarButton;
@@ -46,6 +48,7 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [self customizeNavigationBar];
+    [self setupLocationManager];
     
     return self;
 }
@@ -100,6 +103,13 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
     SAPTaskViewController *controller = [SAPTaskViewController new];
     controller.model = [SAPTask MR_createEntity];
     [self.navigationController pushViewController:controller animated:NO];
+}
+
+- (void)setupLocationManager {
+    CLLocationManager *locationManager = [SAPLocationService sharedInstance].locationManager;
+    self.locationManager = locationManager;
+    locationManager.delegate = self;
+    [locationManager requestAlwaysAuthorization];
 }
 
 @end

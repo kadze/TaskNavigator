@@ -12,6 +12,7 @@
 #import "SAPModel.h"
 
 @interface SAPTask : SAPManagedObject <MKAnnotation>
+//managed object model properties
 @property (nonatomic, assign) CLLocationDegrees   latitude;
 @property (nonatomic, assign) CLLocationDegrees   longitude;
 @property (nonatomic, assign) CLLocationDistance  notificationDistance;
@@ -20,6 +21,9 @@
 @property (nonatomic, copy)   NSString *title;
 @property (nonatomic, strong) NSString *notes;
 
+//other properties
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
+@property (nonatomic, readonly) CLCircularRegion *region;
 
 @end
