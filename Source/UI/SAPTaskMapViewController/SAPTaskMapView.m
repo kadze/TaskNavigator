@@ -12,6 +12,8 @@
 
 #import "MKMapView+SAPExtensions.h"
 
+static CLLocationDistance kSAPZoomDistanceMeters = 1000;
+
 @implementation SAPTaskMapView
 
 @synthesize model = _model;
@@ -49,7 +51,7 @@
         id <MKAnnotation> annotation = annotations.firstObject;
         CLLocationCoordinate2D coordinate = annotation.coordinate;
         if (CLLocationCoordinate2DIsValid(coordinate)) {
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kSAPZoomDistanceMeters, kSAPZoomDistanceMeters);
             [mapView setRegion:region animated:YES];
         }
     } else {
