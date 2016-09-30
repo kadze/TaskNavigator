@@ -16,7 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xXA-pF-dWO"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xXA-pF-dWO">
+                    <connections>
+                        <outlet property="delegate" destination="i5M-Pr-FkT" id="Gev-xq-ko9"/>
+                    </connections>
+                </mapView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -26,7 +30,7 @@
                 <constraint firstItem="xXA-pF-dWO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rik-pU-C92"/>
             </constraints>
             <connections>
-                <outlet property="mapView" destination="xXA-pF-dWO" id="osZ-oR-s9V"/>
+                <outlet property="mapView" destination="xXA-pF-dWO" id="srZ-PF-SeX"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

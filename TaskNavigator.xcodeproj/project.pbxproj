@@ -94,6 +94,7 @@
 		5EC7FACA1D9D0B7A005186BF /* MKMapView+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FAC91D9D0B7A005186BF /* MKMapView+SAPExtensions.m */; };
 		5EC7FAD11D9D3807005186BF /* UIAlertAction+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FACD1D9D3807005186BF /* UIAlertAction+SAPExtensions.m */; };
 		5EC7FAD21D9D3807005186BF /* UIAlertController+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */; };
+		5EC7FAD61D9EB7EF005186BF /* SAPMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FAD51D9EB7EF005186BF /* SAPMapView.m */; };
 		5EEF87C61D94173600DD9A98 /* UIColor+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */; };
 		5EEF87C71D94173600DD9A98 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5EEF87C21D94173600DD9A98 /* LICENSE */; };
 		5EEF87C81D94173600DD9A98 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87C31D94173600DD9A98 /* README.md */; };
@@ -282,6 +283,8 @@
 		5EC7FACD1D9D3807005186BF /* UIAlertAction+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+SAPExtensions.m"; sourceTree = "<group>"; };
 		5EC7FACF1D9D3807005186BF /* UIAlertController+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SAPExtensions.h"; sourceTree = "<group>"; };
 		5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SAPExtensions.m"; sourceTree = "<group>"; };
+		5EC7FAD41D9EB7EF005186BF /* SAPMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPMapView.h; sourceTree = "<group>"; };
+		5EC7FAD51D9EB7EF005186BF /* SAPMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPMapView.m; sourceTree = "<group>"; };
 		5EEF87BE1D94173600DD9A98 /* UIColor+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAPExtensions.h"; sourceTree = "<group>"; };
 		5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAPExtensions.m"; sourceTree = "<group>"; };
 		5EEF87C21D94173600DD9A98 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -1081,6 +1084,7 @@
 				55F26A3C1CE1032F006EE91F /* SAPTaskViewController */,
 				55F26A391CE1032F006EE91F /* SAPTaskMapViewController */,
 				55F26A3A1CE1032F006EE91F /* SAPTasksMapViewController */,
+				5EC7FAD31D9EB7C6005186BF /* SAPMapView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1207,6 +1211,15 @@
 				5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */,
 			);
 			path = UIAlertController;
+			sourceTree = "<group>";
+		};
+		5EC7FAD31D9EB7C6005186BF /* SAPMapView */ = {
+			isa = PBXGroup;
+			children = (
+				5EC7FAD41D9EB7EF005186BF /* SAPMapView.h */,
+				5EC7FAD51D9EB7EF005186BF /* SAPMapView.m */,
+			);
+			path = SAPMapView;
 			sourceTree = "<group>";
 		};
 		5EEF87BC1D94173600DD9A98 /* UIColor */ = {
@@ -1487,6 +1500,7 @@
 				55EFA2DB1CDFE51D006E942A /* NSString+SAPExtensions.m in Sources */,
 				55EFA2E31CDFE51D006E942A /* SAPCoreDataController.m in Sources */,
 				55EFA2EC1CDFE51D006E942A /* SAPCollectionChangeModel+UITableView.m in Sources */,
+				5EC7FAD61D9EB7EF005186BF /* SAPMapView.m in Sources */,
 				55EFA2F41CDFE51D006E942A /* SAPAssignReference.m in Sources */,
 				55EFA2E71CDFE51D006E942A /* SAPCollectionChangeDoubleIndexModel.m in Sources */,
 				55EFA2D41CDFE51D006E942A /* NSFilemanager+SAPExtensions.m in Sources */,

@@ -74,7 +74,7 @@
                                     <color key="textColor" red="0.21568627450980393" green="0.29019607843137252" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-Hi-J6J" customClass="ASValueTrackingSlider">
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-Hi-J6J" customClass="ASValueTrackingSlider">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="WOX-ii-iw2"/>
                                     </constraints>
