@@ -90,6 +90,10 @@
 		55F26A521CE1149B006EE91F /* SAPTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F26A501CE1149B006EE91F /* SAPTaskViewController.m */; };
 		55F26A531CE1149B006EE91F /* SAPTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */; };
 		5EAF3FEE1D9923800006DABA /* SAPTaskProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF3FED1D9923800006DABA /* SAPTaskProperties.m */; };
+		5EAF3FF81D9CF6A00006DABA /* SAPLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF3FF71D9CF6A00006DABA /* SAPLocationService.m */; };
+		5EC7FACA1D9D0B7A005186BF /* MKMapView+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FAC91D9D0B7A005186BF /* MKMapView+SAPExtensions.m */; };
+		5EC7FAD11D9D3807005186BF /* UIAlertAction+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FACD1D9D3807005186BF /* UIAlertAction+SAPExtensions.m */; };
+		5EC7FAD21D9D3807005186BF /* UIAlertController+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */; };
 		5EEF87C61D94173600DD9A98 /* UIColor+SAPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */; };
 		5EEF87C71D94173600DD9A98 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5EEF87C21D94173600DD9A98 /* LICENSE */; };
 		5EEF87C81D94173600DD9A98 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5EEF87C31D94173600DD9A98 /* README.md */; };
@@ -270,6 +274,14 @@
 		55F26A511CE1149B006EE91F /* SAPTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAPTaskViewController.xib; sourceTree = "<group>"; };
 		5EAF3FEC1D9923800006DABA /* SAPTaskProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPTaskProperties.h; sourceTree = "<group>"; };
 		5EAF3FED1D9923800006DABA /* SAPTaskProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPTaskProperties.m; sourceTree = "<group>"; };
+		5EAF3FF61D9CF6A00006DABA /* SAPLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAPLocationService.h; sourceTree = "<group>"; };
+		5EAF3FF71D9CF6A00006DABA /* SAPLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAPLocationService.m; sourceTree = "<group>"; };
+		5EC7FAC81D9D0B7A005186BF /* MKMapView+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+SAPExtensions.h"; sourceTree = "<group>"; };
+		5EC7FAC91D9D0B7A005186BF /* MKMapView+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+SAPExtensions.m"; sourceTree = "<group>"; };
+		5EC7FACC1D9D3807005186BF /* UIAlertAction+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+SAPExtensions.h"; sourceTree = "<group>"; };
+		5EC7FACD1D9D3807005186BF /* UIAlertAction+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+SAPExtensions.m"; sourceTree = "<group>"; };
+		5EC7FACF1D9D3807005186BF /* UIAlertController+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+SAPExtensions.h"; sourceTree = "<group>"; };
+		5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+SAPExtensions.m"; sourceTree = "<group>"; };
 		5EEF87BE1D94173600DD9A98 /* UIColor+SAPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SAPExtensions.h"; sourceTree = "<group>"; };
 		5EEF87BF1D94173600DD9A98 /* UIColor+SAPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SAPExtensions.m"; sourceTree = "<group>"; };
 		5EEF87C21D94173600DD9A98 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -425,7 +437,10 @@
 				55EFA2431CDFE51D006E942A /* NSPathUtilities */,
 				55EFA2461CDFE51D006E942A /* NSString */,
 				55EFA24D1CDFE51D006E942A /* NSURL */,
+				5EC7FAC71D9D0B58005186BF /* MKMapView */,
 				55EFA2501CDFE51D006E942A /* UIAlertView */,
+				5EC7FACB1D9D3807005186BF /* UIAlertAction */,
+				5EC7FACE1D9D3807005186BF /* UIAlertController */,
 				5EEF87BC1D94173600DD9A98 /* UIColor */,
 				55EFA2531CDFE51D006E942A /* UINib */,
 				55EFA2561CDFE51D006E942A /* UITableView */,
@@ -695,6 +710,7 @@
 			children = (
 				55EFA25D1CDFE51D006E942A /* Contexts */,
 				55EFA2621CDFE51D006E942A /* Core Data */,
+				5EAF3FF41D9CF6810006DABA /* Core Location */,
 				55EFA26F1CDFE51D006E942A /* Models */,
 				55EFA2911CDFE51D006E942A /* SAPNumberGeneratorArray */,
 				55EFA2941CDFE51D006E942A /* SAPObjectCache */,
@@ -1149,6 +1165,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5EAF3FF41D9CF6810006DABA /* Core Location */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF3FF51D9CF6810006DABA /* SAPLocationService */,
+			);
+			path = "Core Location";
+			sourceTree = "<group>";
+		};
+		5EAF3FF51D9CF6810006DABA /* SAPLocationService */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF3FF61D9CF6A00006DABA /* SAPLocationService.h */,
+				5EAF3FF71D9CF6A00006DABA /* SAPLocationService.m */,
+			);
+			path = SAPLocationService;
+			sourceTree = "<group>";
+		};
+		5EC7FAC71D9D0B58005186BF /* MKMapView */ = {
+			isa = PBXGroup;
+			children = (
+				5EC7FAC81D9D0B7A005186BF /* MKMapView+SAPExtensions.h */,
+				5EC7FAC91D9D0B7A005186BF /* MKMapView+SAPExtensions.m */,
+			);
+			path = MKMapView;
+			sourceTree = "<group>";
+		};
+		5EC7FACB1D9D3807005186BF /* UIAlertAction */ = {
+			isa = PBXGroup;
+			children = (
+				5EC7FACC1D9D3807005186BF /* UIAlertAction+SAPExtensions.h */,
+				5EC7FACD1D9D3807005186BF /* UIAlertAction+SAPExtensions.m */,
+			);
+			path = UIAlertAction;
+			sourceTree = "<group>";
+		};
+		5EC7FACE1D9D3807005186BF /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				5EC7FACF1D9D3807005186BF /* UIAlertController+SAPExtensions.h */,
+				5EC7FAD01D9D3807005186BF /* UIAlertController+SAPExtensions.m */,
+			);
+			path = UIAlertController;
+			sourceTree = "<group>";
+		};
 		5EEF87BC1D94173600DD9A98 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,9 +1430,11 @@
 				55EFA2EA1CDFE51D006E942A /* SAPArrayModel.m in Sources */,
 				5EEF87C61D94173600DD9A98 /* UIColor+SAPExtensions.m in Sources */,
 				55EFA2F51CDFE51D006E942A /* SAPReference.m in Sources */,
+				5EAF3FF81D9CF6A00006DABA /* SAPLocationService.m in Sources */,
 				550886D91CE2388A00B417F7 /* SAPTaskView.m in Sources */,
 				55F26A521CE1149B006EE91F /* SAPTaskViewController.m in Sources */,
 				55EFA2FD1CDFE51D006E942A /* SAPDispatch.m in Sources */,
+				5EC7FAD21D9D3807005186BF /* UIAlertController+SAPExtensions.m in Sources */,
 				55F26A451CE104D2006EE91F /* SAPTask.m in Sources */,
 				55EFA2F21CDFE51D006E942A /* SAPObjectCache.m in Sources */,
 				55EFA2DA1CDFE51D006E942A /* NSString+IOPRandomName.m in Sources */,
@@ -1411,6 +1473,8 @@
 				55EFA2F71CDFE51D006E942A /* SAPViewController.m in Sources */,
 				55EFA2F81CDFE51D006E942A /* SAPActivityIndicator.m in Sources */,
 				55EFA2CF1CDFE51D006E942A /* NSNull+SAPJSONNull.m in Sources */,
+				5EC7FAD11D9D3807005186BF /* UIAlertAction+SAPExtensions.m in Sources */,
+				5EC7FACA1D9D0B7A005186BF /* MKMapView+SAPExtensions.m in Sources */,
 				55EFA2D91CDFE51D006E942A /* NSPathUtilities+SAPExtensions.m in Sources */,
 				55EFA2E41CDFE51D006E942A /* SAPIdentifiableManagedObject.m in Sources */,
 				55EFA2DF1CDFE51D006E942A /* UITableView+SAPExtensions.m in Sources */,
