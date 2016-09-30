@@ -91,11 +91,11 @@ SAPViewControllerBaseViewProperty(SAPTaskMapViewController, SAPTaskMapView, main
 }
 
 - (void)discardChoice {
+    id model = self.model;
     SAPTask *annotation = self.model;
     annotation.coordinate = kCLLocationCoordinate2DInvalid;
     SAPDispatchAsyncOnDefaultQueue(^{
-        [annotation performSelector:@selector(modelDidFinishLoading:)];
-//        [annotation notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
+        [model notifyObserversWithSelector:@selector(modelDidFinishLoading:)];
     });
 }
 
