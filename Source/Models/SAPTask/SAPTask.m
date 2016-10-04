@@ -118,8 +118,10 @@ static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will 
     [[SAPLocationService sharedInstance].locationManager startMonitoringForRegion:region];
     
     ///
+    [[UNUserNotificationCenter currentNotificationCenter] getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+        int a = 1;
+    }];
     UNLocationNotificationTrigger *trigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:NO];
-//    UNLocationNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:7 repeats:NO];
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.title = self.title;
     content.body = self.notes;

@@ -27,7 +27,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow *window = [UIWindow window];
     self.window = window;
@@ -45,13 +44,12 @@
     
     [window makeKeyAndVisible];
     
+    //User notifications setup
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
-                          completionHandler:^(BOOL granted, NSError * _Nullable error)
-     {
-         ///
-     }];
-//    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     center.delegate = self;
     
     return YES;
@@ -77,6 +75,9 @@
     
 }
 
+#pragma mark -
+#pragma mark UNUserNotificationCenterDelegate
+
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
 {
     completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionSound);
@@ -84,10 +85,8 @@
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
 {
-    int a = 1;
+    completionHandler();
 }
-
-
 
 #pragma mark -
 #pragma mark Private
