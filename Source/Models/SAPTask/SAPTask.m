@@ -17,7 +17,6 @@
 
 static NSString * const kSAPErrorTitle = @"Error";
 static NSString * const kSAPWarningTitle = @"Warning";
-static NSString * const kSAPNotSupportedMessage = @"Geofencing is not supported on this device!";
 static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will only be activated once you grant the permission to access the device location.";
 
 @implementation SAPTask
@@ -29,7 +28,6 @@ static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will 
 @dynamic title;
 @dynamic notes;
 
-//@dynamic coordinate;
 @synthesize region = _region;
 @synthesize stringID = _stringID;
 
@@ -51,6 +49,10 @@ static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will 
 }
 
 - (CLCircularRegion *)region {
+    if (!CLLocationCoordinate2DIsValid(self.coordinate)) {
+        return nil;
+    }
+    
     NSManagedObjectID *managedObjectID = self.objectID;
     if (managedObjectID.temporaryID) {
         return nil;
@@ -105,23 +107,7 @@ static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will 
         return;
     }
     
-    if (![CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
-        [UIAlertController presentAlertControllerWithTitle:kSAPErrorTitle message:kSAPNotSupportedMessage];
-    }
-    
-    if (kCLAuthorizationStatusAuthorizedAlways != [CLLocationManager authorizationStatus]) {
-        [UIAlertController presentAlertControllerWithTitle:kSAPWarningTitle message:kSAPNotSupportedMessage];
-    }
-    
-    CLCircularRegion *region = self.region;
-    
-    [[SAPLocationService sharedInstance].locationManager startMonitoringForRegion:region];
-    
-    ///
-    [[UNUserNotificationCenter currentNotificationCenter] getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
-        int a = 1;
-    }];
-    UNLocationNotificationTrigger *trigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:NO];
+    UNLocationNotificationTrigger *trigger = [UNLocationNotificationTrigger triggerWithRegion:self.region repeats:NO];
     UNMutableNotificationContent *content = [UNMutableNotificationContent new];
     content.title = self.title;
     content.body = self.notes;
@@ -131,7 +117,6 @@ static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will 
 }
 
 - (void)stopMonitoring {
-    [[SAPLocationService sharedInstance].locationManager stopMonitoringForRegion:self.region];
     [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers:@[self.stringID]];
 }
 

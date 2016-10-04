@@ -12,7 +12,6 @@
 #import "SAPModelView.h"
 
 @interface SAPTaskMapView : SAPMapView <SAPModelView, MKMapViewDelegate>
-//@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) IBOutlet UIButton  *OKButton;           
 
 @end

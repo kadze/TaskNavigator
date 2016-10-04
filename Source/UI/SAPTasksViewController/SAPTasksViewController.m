@@ -8,7 +8,6 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import <UserNotifications/UserNotifications.h>
 
-
 #import "SAPTasksViewController.h"
 
 #import "SAPTasksView.h"
@@ -17,7 +16,6 @@
 #import "SAPTasksMapViewController.h"
 #import "SAPTask.h"
 #import "SAPTasksContext.h"
-#import "SAPLocationService.h"
 
 #import "UIAlertController+SAPExtensions.h"
 
@@ -25,14 +23,10 @@
 
 static NSString * const kSAPNavigationBarTitle = @"Task List";
 static NSString * const kSAPAddButtonImageName = @"AddButton";
-static NSString * const kSAPErrorTitle = @"Error";
-static NSString * const kSAPLocationManagerErrorTitle = @"Location Manager failed with the following error: ";
-static NSString * const kSAPMonitoringErrorTitle = @"Monitoring failed for region with identifier: ";
 
 SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView);
 
-@interface SAPTasksViewController () <CLLocationManagerDelegate>
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@interface SAPTasksViewController ()
 
 - (void)customizeNavigationBar;
 - (void)customizeRightBarButton;
@@ -55,18 +49,6 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     [self customizeNavigationBar];
-    [self setupLocationManager];
-    
-    
-//    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-//    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge)
-//                          completionHandler:^(BOOL granted, NSError * _Nullable error)
-//    {
-//        ///
-//    }];
-    
-//    [center removeAllPendingNotificationRequests];
-    
     
     return self;
 }
@@ -101,28 +83,6 @@ SAPViewControllerBaseViewProperty(SAPTasksViewController, SAPTasksView, mainView
 }
 
 #pragma mark -
-#pragma mark CLLocationManagerDelegate
-
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    if ([region isKindOfClass:[CLCircularRegion class]]) {
-        [self handleEventForRegion:region];
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    [UIAlertController presentAlertControllerWithTitle:kSAPErrorTitle
-                                               message:[NSString stringWithFormat:@"%@%@", kSAPLocationManagerErrorTitle, error.description]];
-}
-
-- (void)locationManager:(CLLocationManager *)manager
-monitoringDidFailForRegion:(nullable CLRegion *)region
-              withError:(NSError *)error
-{
-    [UIAlertController presentAlertControllerWithTitle:kSAPErrorTitle
-                                               message:[NSString stringWithFormat:@"%@%@", kSAPMonitoringErrorTitle, region.identifier]];
-}
-
-#pragma mark -
 #pragma mark Private
 
 - (void)customizeRightBarButton {
@@ -143,39 +103,6 @@ monitoringDidFailForRegion:(nullable CLRegion *)region
     SAPTaskViewController *controller = [SAPTaskViewController new];
     controller.model = [SAPTask MR_createEntity];
     [self.navigationController pushViewController:controller animated:NO];
-}
-
-- (void)setupLocationManager {
-    CLLocationManager *locationManager = [SAPLocationService sharedInstance].locationManager;
-    self.locationManager = locationManager;
-    locationManager.delegate = self;
-    [locationManager requestAlwaysAuthorization];
-}
-
-- (void)handleEventForRegion:(CLCircularRegion *)region {
-    NSLog(@"Geofence triggered!!!");
-}
-
-- (NSString *)noteForRegion:(CLCircularRegion *)region {
-    return [self taskForRegion:region].notes;
-}
-
-- (SAPTask *)taskForRegion:(CLCircularRegion *)region {
-    NSArray *tasks = self.items.objects;
-    NSUInteger taskIndex = [tasks indexOfObjectPassingTest:^BOOL(SAPTask *task, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([task.objectID.URIRepresentation.absoluteString isEqualToString:region.identifier]) {
-            return YES;
-        }
-        
-        return NO;
-    }];
-    
-    SAPTask *task = nil;
-    if (NSNotFound != taskIndex) {
-        task = tasks[taskIndex];
-    }
-    
-    return task;
 }
 
 @end
