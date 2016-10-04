@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-#import "UIAlertView+SAPExtensions.h"
+#import "UIAlertController+SAPExtensions.h"
 
 #import "SAPDispatchOnceMacro.h"
 #import "SAPOwnershipMacro.h"
@@ -76,7 +76,7 @@ static NSString * const kSAPDatabaseFileName = @"Users.sqlite";
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:kSAPMomResource withExtension:kSAPMomExtension];
     NSManagedObjectModel *mom = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     if (!mom) {
-        [UIAlertView showWithError:[NSError errorWithDomain:NSCocoaErrorDomain
+        [UIAlertController presentWithError:[NSError errorWithDomain:NSCocoaErrorDomain
                                                       code:0
                                                   userInfo:@{NSLocalizedDescriptionKey : kSAPErrorLocalizedDescription}]];
     }
@@ -104,7 +104,7 @@ static NSString * const kSAPDatabaseFileName = @"Users.sqlite";
                                                    options:nil
                                                      error:&error];
     if (error) {
-        [UIAlertView showWithError:error];
+        [UIAlertController presentWithError:error];
     }
 }
 
@@ -136,7 +136,7 @@ static NSString * const kSAPDatabaseFileName = @"Users.sqlite";
     NSError *error = nil;
     [self.managedObjectContext save:&error];
     if (error) {
-        [UIAlertView showWithError:error];
+        [UIAlertController presentWithError:error];
     }
 }
 

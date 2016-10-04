@@ -12,7 +12,7 @@
 #import "SAPContext.h"
 #import "SAPModel.h"
 
-#import "UIAlertView+SAPExtensions.h"
+#import "UIAlertController+SAPExtensions.h"
 
 #import "SAPSetters.h"
 
@@ -82,7 +82,7 @@
     SAPDispatchAsyncOnMainQueue(^{
         self.mainView.loadingViewVisible = NO;
         if (error) {
-            [UIAlertView showWithError:error];
+            [UIAlertController presentWithError:error];
         }
     });
 }
