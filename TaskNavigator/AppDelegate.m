@@ -15,7 +15,7 @@
 #import "SAPTasks.h"
 #import "SAPTask.h"
 
-#import "SAPColor.h"
+#import "UIColor+TaskNavigator.h"
 
 #import "UIWindow+SAPExtensions.h"
 
@@ -92,7 +92,7 @@
 #pragma mark Private
 
 - (void)customizeAppearance {
-    [UINavigationBar appearance].barTintColor = [SAPColor navigationBarColor];
+    [UINavigationBar appearance].barTintColor = [UIColor blueThemeColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"BackArrow"];
