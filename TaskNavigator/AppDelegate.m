@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIAppearance.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <UserNotifications/UserNotifications.h>
 
 #import "AppDelegate.h"
 
@@ -14,18 +15,17 @@
 #import "SAPTasks.h"
 #import "SAPTask.h"
 
-#import "SAPColor.h"
+#import "UIColor+TaskNavigator.h"
 
 #import "UIWindow+SAPExtensions.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 - (void)customizeAppearance;
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIWindow *window = [UIWindow window];
@@ -43,6 +43,14 @@
     window.rootViewController = navigationController;
     
     [window makeKeyAndVisible];
+    
+    //User notifications setup
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    center.delegate = self;
     
     return YES;
 }
@@ -68,10 +76,23 @@
 }
 
 #pragma mark -
+#pragma mark UNUserNotificationCenterDelegate
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+    completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionSound);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
+{
+    completionHandler();
+}
+
+#pragma mark -
 #pragma mark Private
 
 - (void)customizeAppearance {
-    [UINavigationBar appearance].barTintColor = [SAPColor navigationBarColor];
+    [UINavigationBar appearance].barTintColor = [UIColor blueThemeColor];
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     [UINavigationBar appearance].backIndicatorImage = [UIImage imageNamed:@"BackArrow"];

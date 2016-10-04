@@ -10,21 +10,26 @@
 
 #import "SAPTask.h"
 
+#import "MKMapView+SAPExtensions.h"
+
+static CLLocationDistance kSAPZoomDistanceMeters = 1000;
+
 @implementation SAPTaskMapView
 
 @synthesize model = _model;
+@synthesize mapView = _mapView;
 
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setModel:(id<MKAnnotation>)model {
-    if (_model != model) {
-        MKMapView *mapView = self.mapView;
-        
-        [mapView removeAnnotation:_model];
-        _model = model;
-        [mapView addAnnotation:model];
-    }
+- (void)setModel:(SAPTask *)model {
+    MKMapView *mapView = self.mapView;
+    
+    [mapView removeAnnotation:_model];
+    [mapView removeOverlays:mapView.overlays];
+    _model = model;
+    [mapView addAnnotation:model];
+    [self addOverlayForTask:model];
     
     [self fillWithModel:model];
 }
@@ -33,6 +38,25 @@
 #pragma mark SAPModelView
 
 - (void)fillWithModel:(id<MKAnnotation>)model {
+    
+}
+
+#pragma mark -
+#pragma mark MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    //if there is valid annotation - zoom to it, if not - zoom to user location;
+    NSArray *annotations = mapView.annotations;
+    if (annotations.count) {
+        id <MKAnnotation> annotation = annotations.firstObject;
+        CLLocationCoordinate2D coordinate = annotation.coordinate;
+        if (CLLocationCoordinate2DIsValid(coordinate)) {
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, kSAPZoomDistanceMeters, kSAPZoomDistanceMeters);
+            [mapView setRegion:region animated:YES];
+        }
+    } else {
+        [self.mapView zoomToUserLocation];
+    }
 }
 
 @end

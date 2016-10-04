@@ -21,7 +21,6 @@ static NSString * const kSAPNavigationBarTitle = @"Task";
 SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
 
 @interface SAPTaskViewController ()
-@property (nonatomic, strong) NSLayoutConstraint *topConstraint;
 
 - (void)fillModelFromMainView;
 
@@ -37,17 +36,6 @@ SAPViewControllerBaseViewProperty(SAPTaskViewController, SAPTaskView, mainView);
     [self customizeNavigationBar];
     
     return self;
-}
-
-#pragma mark -
-#pragma mark Accessors
-
-- (void)setTopConstraint:(NSLayoutConstraint *)topConstraint {
-    if (topConstraint != _topConstraint) {
-        _topConstraint.active = NO;
-        _topConstraint = topConstraint;
-        _topConstraint.active = YES;
-    }
 }
 
 #pragma mark -

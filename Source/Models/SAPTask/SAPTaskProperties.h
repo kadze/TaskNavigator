@@ -20,5 +20,7 @@
 + (NSString *)notes;
 
 + (NSString *)coordinate;
++ (NSString *)region;
++ (NSString *)stringID;
 
 @end

@@ -8,11 +8,10 @@
 
 #import <MapKit/MapKit.h>
 
-#import "SAPView.h"
+#import "SAPMapView.h"
 
 #import "SAPModelView.h"
 
-@interface SAPTasksMapView : SAPView <SAPModelView>
-@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@interface SAPTasksMapView : SAPMapView <SAPModelView>
 
 @end

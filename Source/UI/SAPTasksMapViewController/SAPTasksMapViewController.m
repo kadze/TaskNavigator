@@ -11,6 +11,10 @@
 #import "SAPViewControllerMacro.h"
 #import "SAPTasksMapView.h"
 
+#import "MKMapView+SAPExtensions.h"
+
+static NSString * const kSAPZoomButtonTitle = @"Zoom";
+
 SAPViewControllerBaseViewProperty(SAPTasksMapViewController, SAPTasksMapView, mainView);
 
 @interface SAPTasksMapViewController ()
@@ -34,6 +38,18 @@ SAPViewControllerBaseViewProperty(SAPTasksMapViewController, SAPTasksMapView, ma
     }
     
     [self finishModelSetting];
+}
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.mapView.showsUserLocation = ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:kSAPZoomButtonTitle
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self.mapView
+                                                                             action:@selector(zoomToUserLocation)];
 }
 
 #pragma mark -

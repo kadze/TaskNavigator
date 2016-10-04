@@ -38,4 +38,12 @@
     return @"coordinate";
 }
 
++ (NSString *)region {
+    return @"region";
+}
+
++ (NSString *)stringID {
+    return @"stringID";
+}
+
 @end

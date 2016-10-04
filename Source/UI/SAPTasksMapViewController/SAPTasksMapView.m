@@ -9,10 +9,12 @@
 #import "SAPTasksMapView.h"
 
 #import "SAPTasks.h"
+#import "SAPTask.h"
 
 @implementation SAPTasksMapView
 
 @synthesize model = _model;
+@synthesize mapView = _mapView;
 
 #pragma mark -
 #pragma mark Accessors
@@ -24,8 +26,9 @@
         [mapView removeAnnotations:mapView.annotations];
         _model = model;
         for (int i = 0; i < model.count; i++) {
-            id<MKAnnotation> annotation = model[i];
-            [mapView addAnnotation:annotation];
+            SAPTask *task = model[i];
+            [mapView addAnnotation:task];
+            [self addOverlayForTask:task];
         }
     }
     
