@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIAppearance.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <UserNotifications/UserNotifications.h>
 
 #import "AppDelegate.h"
 
@@ -18,7 +19,7 @@
 
 #import "UIWindow+SAPExtensions.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 - (void)customizeAppearance;
 
@@ -44,6 +45,15 @@
     
     [window makeKeyAndVisible];
     
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge
+                          completionHandler:^(BOOL granted, NSError * _Nullable error)
+     {
+         ///
+     }];
+//    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+    center.delegate = self;
+    
     return YES;
 }
 
@@ -66,6 +76,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
 }
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler
+{
+    completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionSound);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler
+{
+    int a = 1;
+}
+
+
 
 #pragma mark -
 #pragma mark Private

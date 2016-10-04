@@ -25,5 +25,6 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
 @property (nonatomic, readonly) CLCircularRegion *region;
+@property (nonatomic, readonly) NSString         *stringID;
 
 @end

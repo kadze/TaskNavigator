@@ -5,6 +5,7 @@
 //  Created by Andrey on 5/9/16.
 //  Copyright © 2016 Andrey. All rights reserved.
 //
+#import <UserNotifications/UserNotifications.h>
 
 #import "SAPTask.h"
 
@@ -17,7 +18,7 @@
 static NSString * const kSAPErrorTitle = @"Error";
 static NSString * const kSAPWarningTitle = @"Warning";
 static NSString * const kSAPNotSupportedMessage = @"Geofencing is not supported on this device!";
-static NSString * const kSAPNoPermissionMessage = @"Your geotification is saved but will only be activated once you grant Geotify permission to access the device location.";
+static NSString * const kSAPNoPermissionMessage = @"Your Task is saved but will only be activated once you grant the permission to access the device location.";
 
 @implementation SAPTask
 
@@ -30,6 +31,7 @@ static NSString * const kSAPNoPermissionMessage = @"Your geotification is saved 
 
 //@dynamic coordinate;
 @synthesize region = _region;
+@synthesize stringID = _stringID;
 
 #pragma mark -
 #pragma mark Accessors
@@ -44,6 +46,10 @@ static NSString * const kSAPNoPermissionMessage = @"Your geotification is saved 
     return kCLLocationCoordinate2DInvalid;
 }
 
+- (NSString *)stringID {
+    return self.objectID.URIRepresentation.absoluteString;
+}
+
 - (CLCircularRegion *)region {
     NSManagedObjectID *managedObjectID = self.objectID;
     if (managedObjectID.temporaryID) {
@@ -51,7 +57,7 @@ static NSString * const kSAPNoPermissionMessage = @"Your geotification is saved 
     } else {
         CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:self.coordinate
                                                                      radius:self.notificationDistance
-                                                                 identifier:managedObjectID.URIRepresentation.absoluteString];
+                                                                 identifier:self.stringID];
         
         region.notifyOnEntry = YES;
         
@@ -107,11 +113,24 @@ static NSString * const kSAPNoPermissionMessage = @"Your geotification is saved 
         [UIAlertController presentAlertControllerWithTitle:kSAPWarningTitle message:kSAPNotSupportedMessage];
     }
     
-    [[SAPLocationService sharedInstance].locationManager startMonitoringForRegion:self.region];
+    CLCircularRegion *region = self.region;
+    
+    [[SAPLocationService sharedInstance].locationManager startMonitoringForRegion:region];
+    
+    ///
+    UNLocationNotificationTrigger *trigger = [UNLocationNotificationTrigger triggerWithRegion:region repeats:NO];
+//    UNLocationNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:7 repeats:NO];
+    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+    content.title = self.title;
+    content.body = self.notes;
+    content.sound = [UNNotificationSound defaultSound];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:self.stringID content:content trigger:trigger];
+    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:nil];
 }
 
 - (void)stopMonitoring {
     [[SAPLocationService sharedInstance].locationManager stopMonitoringForRegion:self.region];
+    [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers:@[self.stringID]];
 }
 
 @end
